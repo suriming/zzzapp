@@ -51,8 +51,12 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
-				E730A948291BB9490033B05C /* ZalZaZaApp.swift */,
-				E730A94A291BB9490033B05C /* ContentView.swift */,
+				E730A95B291BBAD90033B05C /* Utils */,
+				E730A95A291BBA360033B05C /* APP */,
+				E730A959291BBA2B0033B05C /* UI */,
+				E730A958291BBA200033B05C /* Extensions+Types */,
+				E730A957291BBA150033B05C /* Model */,
+				E730A956291BBA0E0033B05C /* Pose */,
 				E730A94C291BB94A0033B05C /* Assets.xcassets */,
 				E730A94E291BB94A0033B05C /* Preview Content */,
 			);
@@ -65,6 +69,50 @@
 				E730A94F291BB94A0033B05C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E730A956291BBA0E0033B05C /* Pose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pose;
+			sourceTree = "<group>";
+		};
+		E730A957291BBA150033B05C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E730A958291BBA200033B05C /* Extensions+Types */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extensions+Types";
+			sourceTree = "<group>";
+		};
+		E730A959291BBA2B0033B05C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E730A94A291BB9490033B05C /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E730A95A291BBA360033B05C /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				E730A948291BB9490033B05C /* ZalZaZaApp.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		E730A95B291BBAD90033B05C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
