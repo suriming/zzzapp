@@ -171,6 +171,5 @@ $RECYCLE.BIN/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
-*.pbxproj
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,swift,xcode,git
