@@ -17,6 +17,8 @@ struct Contestant: Identifiable, Decodable {
     var weight:Float
     var age:Int
     
-    var lastSleepTime:Float
-    var maxSleepTime:Float
+    var lastSleepTimeHour:Int
+    var lastSleepTimeMinute:Int
+    var maxSleepTimeHour:Int
+    var maxSleepTimeMinute:Int
 }

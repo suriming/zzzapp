@@ -5,6 +5,8 @@
     "height":200.0,
     "weight":80.0,
     "age":25,
-    "lastSleepTime":2.5,
-    "maxSleepTime":4.5
+    "lastSleepTimeHour":2,
+    "lastSleepTimeMinute":30,
+    "maxSleepTimeHour":4,
+    "maxSleepTimeMinute":30
 }]

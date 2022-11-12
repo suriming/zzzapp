@@ -23,6 +23,22 @@ struct ContestantView: View {
                     .multilineTextAlignment(.center)
                 
                 
+                VStack {
+                    HStack(alignment: .firstTextBaseline,spacing:0) {
+                        Text(String(contestant.lastSleepTimeHour))
+                            .font(.largeTitle)
+                            .foregroundColor(Color.white)
+                        Text("h")
+                            .foregroundColor(Color.white)
+                    }
+                    
+                    HStack(alignment: .firstTextBaseline,spacing:0) {
+                        Text(String(contestant.lastSleepTimeMinute))
+                            .foregroundColor(Color.white)
+                        Text("min")
+                            .foregroundColor(Color.white)
+                    }
+                }
             }
         }
     }
