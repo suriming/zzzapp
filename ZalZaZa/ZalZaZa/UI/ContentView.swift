@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isLoading: Bool = true
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            VStack {
+                Text("Hello, world")
+            }
+            .padding()
+            
+            if isLoading {
+                LaunchScreenView().transition(.opacity).zIndex(1)
+            }
         }
-        .padding()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                withAnimation { isLoading.toggle() }
+            })
+        }
     }
 }
 

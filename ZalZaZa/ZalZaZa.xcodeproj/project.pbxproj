@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7669E291E91B200354E0B /* LaunchScreenView.swift */; };
 		E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A948291BB9490033B05C /* ZalZaZaApp.swift */; };
 		E730A94B291BB9490033B05C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A94A291BB9490033B05C /* ContentView.swift */; };
 		E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E730A94C291BB94A0033B05C /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49E7669E291E91B200354E0B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		E730A945291BB9490033B05C /* ZalZaZa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZalZaZa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E730A948291BB9490033B05C /* ZalZaZaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZalZaZaApp.swift; sourceTree = "<group>"; };
 		E730A94A291BB9490033B05C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E730A94A291BB9490033B05C /* ContentView.swift */,
+				49E7669E291E91B200354E0B /* LaunchScreenView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				E730A94B291BB9490033B05C /* ContentView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
+				49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
