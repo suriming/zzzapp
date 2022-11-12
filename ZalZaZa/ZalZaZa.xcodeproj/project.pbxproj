@@ -12,6 +12,8 @@
 		499FB100291FBD4F00147C33 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB0FF291FBD4F00147C33 /* DataService.swift */; };
 		499FB102291FBD6700147C33 /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB101291FBD6700147C33 /* ContestantView.swift */; };
 		499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB103291FBDB000147C33 /* ContestantModel.swift */; };
+		3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1948E5291F9D7E00F806C9 /* LakeView.swift */; };
+		3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */; };
 		49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7669E291E91B200354E0B /* LaunchScreenView.swift */; };
 		E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A948291BB9490033B05C /* ZalZaZaApp.swift */; };
 		E730A94B291BB9490033B05C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A94A291BB9490033B05C /* ContentView.swift */; };
@@ -25,6 +27,8 @@
 		499FB0FF291FBD4F00147C33 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		499FB101291FBD6700147C33 /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
 		499FB103291FBDB000147C33 /* ContestantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantModel.swift; sourceTree = "<group>"; };
+		3F1948E5291F9D7E00F806C9 /* LakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeView.swift; sourceTree = "<group>"; };
+		3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CalmLakeScene.scn; sourceTree = "<group>"; };
 		49E7669E291E91B200354E0B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		E730A945291BB9490033B05C /* ZalZaZa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZalZaZa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E730A948291BB9490033B05C /* ZalZaZaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZalZaZaApp.swift; sourceTree = "<group>"; };
@@ -154,6 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				499FB0F9291FBBB800147C33 /* Views */,
+				3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */,
+				E730A94A291BB9490033B05C /* ContentView.swift */,
+				49E7669E291E91B200354E0B /* LaunchScreenView.swift */,
+				3F1948E5291F9D7E00F806C9 /* LakeView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
+				3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */,
 				E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */,
 				499FB0FD291FBCDC00147C33 /* contestants.json in Resources */,
 			);
@@ -245,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E730A94B291BB9490033B05C /* ContentView.swift in Sources */,
+				3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
 				49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */,
