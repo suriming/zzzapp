@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB0FA291FBC0200147C33 /* Contestant.swift */; };
+		499FB0FD291FBCDC00147C33 /* contestants.json in Resources */ = {isa = PBXBuildFile; fileRef = 499FB0FC291FBCDC00147C33 /* contestants.json */; };
+		499FB100291FBD4F00147C33 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB0FF291FBD4F00147C33 /* DataService.swift */; };
+		499FB102291FBD6700147C33 /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB101291FBD6700147C33 /* ContestantView.swift */; };
+		499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB103291FBDB000147C33 /* ContestantModel.swift */; };
 		49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7669E291E91B200354E0B /* LaunchScreenView.swift */; };
 		E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A948291BB9490033B05C /* ZalZaZaApp.swift */; };
 		E730A94B291BB9490033B05C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A94A291BB9490033B05C /* ContentView.swift */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		499FB0FA291FBC0200147C33 /* Contestant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contestant.swift; sourceTree = "<group>"; };
+		499FB0FC291FBCDC00147C33 /* contestants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contestants.json; sourceTree = "<group>"; };
+		499FB0FF291FBD4F00147C33 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		499FB101291FBD6700147C33 /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
+		499FB103291FBDB000147C33 /* ContestantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantModel.swift; sourceTree = "<group>"; };
 		49E7669E291E91B200354E0B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		E730A945291BB9490033B05C /* ZalZaZa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZalZaZa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E730A948291BB9490033B05C /* ZalZaZaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZalZaZaApp.swift; sourceTree = "<group>"; };
@@ -34,6 +44,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		499FB0F6291FBB7100147C33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				499FB103291FBDB000147C33 /* ContestantModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		499FB0F7291FBB7800147C33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				499FB0FA291FBC0200147C33 /* Contestant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		499FB0F8291FBB7D00147C33 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				499FB0FC291FBCDC00147C33 /* contestants.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		499FB0F9291FBBB800147C33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E730A94A291BB9490033B05C /* ContentView.swift */,
+				49E7669E291E91B200354E0B /* LaunchScreenView.swift */,
+				499FB101291FBD6700147C33 /* ContestantView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		499FB0FE291FBD3700147C33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				499FB0FF291FBD4F00147C33 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E730A93C291BB9490033B05C = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +105,13 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
-				E730A95B291BBAD90033B05C /* Utils */,
-				E730A95A291BBA360033B05C /* APP */,
+				499FB0FE291FBD3700147C33 /* Services */,
 				E730A959291BBA2B0033B05C /* UI */,
+				499FB0F6291FBB7100147C33 /* ViewModels */,
+				499FB0F7291FBB7800147C33 /* Models */,
+				499FB0F8291FBB7D00147C33 /* Data */,
+				E730A95A291BBA360033B05C /* APP */,
+				E730A95B291BBAD90033B05C /* Utils */,
 				E730A958291BBA200033B05C /* Extensions+Types */,
 				E730A957291BBA150033B05C /* Model */,
 				E730A956291BBA0E0033B05C /* Pose */,
@@ -97,8 +153,7 @@
 		E730A959291BBA2B0033B05C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E730A94A291BB9490033B05C /* ContentView.swift */,
-				49E7669E291E91B200354E0B /* LaunchScreenView.swift */,
+				499FB0F9291FBBB800147C33 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -178,6 +233,7 @@
 			files = (
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
 				E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */,
+				499FB0FD291FBCDC00147C33 /* contestants.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +246,11 @@
 			files = (
 				E730A94B291BB9490033B05C /* ContentView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
+				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
 				49E7669F291E91B200354E0B /* LaunchScreenView.swift in Sources */,
+				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
+				499FB102291FBD6700147C33 /* ContestantView.swift in Sources */,
+				499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

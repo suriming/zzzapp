@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var contestantModel = ContestantModel()
     @State var isLoading: Bool = true
     
     var body: some View {
         ZStack {
             VStack {
-                Text("Hello, world")
+                ContestantView(contestant: contestantModel.contestants[0])
             }
-            .padding()
             
             if isLoading {
                 LaunchScreenView().transition(.opacity).zIndex(1)
