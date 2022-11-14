@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ZzTabView: View {
     
-    @State var tabIndex = 0
+    // In order to start drawing the circular bar
+    // as the launching screen gets over
+    @State var tabIndex = 1
     @State var isLoading: Bool = true
     
     init() {
@@ -20,6 +22,7 @@ struct ZzTabView: View {
         ZStack {
             TabView(selection: $tabIndex) {
                 
+                // MARK: Tab 1
                 ContentView()
                 .tabItem {
                     VStack {
@@ -29,6 +32,7 @@ struct ZzTabView: View {
                 }
                 .tag(0)
                 
+                // MARK: Tab 2
                 ZStack {
                     Color("MainViewColor")
                         .ignoresSafeArea()
@@ -44,6 +48,7 @@ struct ZzTabView: View {
                 }
                 .tag(1)
                 
+                // MARK: Tab 3
                 ZStack {
                     Color("MainViewColor")
                         .ignoresSafeArea()
@@ -60,6 +65,7 @@ struct ZzTabView: View {
                 }
                 .tag(2)
                 
+                // MARK: Tab 4
                 ZStack {
                     Color("MainViewColor")
                         .ignoresSafeArea()
@@ -85,6 +91,10 @@ struct ZzTabView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 withAnimation { isLoading.toggle() }
+                
+                // Change the tab to tab 1
+                // And start drawing the circular bar
+                tabIndex = 0
             })
         }
         

@@ -10,23 +10,34 @@ import SwiftUI
 struct ContestantView: View {
     
     var contestant:Contestant
+    let progress: Double // Goal sleep time hard coded to 8
+    
+    init(contestant: Contestant) {
+        self.contestant = contestant
+        self.progress = (Double(contestant.lastSleepTimeHour) + Double(contestant.lastSleepTimeMinute)/60.0)/8.0
+    }
     
     var body: some View {
         ZStack {
             Color("MainViewColor")
                 .ignoresSafeArea()
             
+            // MARK: Relative Container
             GeometryReader { g in
+                
+                // MARK: Intro Comment
                 Text(contestant.name + "님의 \n지난 숙면 시간")
                     .foregroundColor(.white)
                     .font(.headline)
                     .multilineTextAlignment(.center)
-                    .position(x: g.size.width/2, y:g.size.height/8)
+                    .position(x: g.size.width/2, y:g.size.height/6)
                 
-                CircularProgressView()
+                // MARK: Circular Progress Bar
+                CircularProgressView(progress: progress)
                     .frame(width: g.size.width/2, height: g.size.height/3)
-                    .position(x: g.size.width/2, y:g.size.height/3)
+                    .position(x: g.size.width/2, y:g.size.height/2.5)
                 
+                // MARK: Time Expression
                 VStack {
                     HStack(alignment: .firstTextBaseline,spacing:0) {
                         Text(String(contestant.lastSleepTimeHour))
@@ -43,7 +54,7 @@ struct ContestantView: View {
                             .foregroundColor(Color.white)
                     }
                 }
-                .position(x: g.size.width/2, y:g.size.height/3)
+                .position(x: g.size.width/2, y:g.size.height/2.5)
             }
         }
     }

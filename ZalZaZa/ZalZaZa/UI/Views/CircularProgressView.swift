@@ -8,30 +8,45 @@
 import SwiftUI
 
 struct CircularProgressView: View {
+    
+    // If drawingStroke is true, then start drawing on appear
+    @State private var drawingStroke = false
+    let progress: Double
+    let animation = Animation
+            .easeOut(duration: 1)
+//            .repeatForever(autoreverses: false)
+            .delay(0.5)
+    
     var body: some View {
             ZStack {
                 Circle()
                     .stroke(
-                        Color.pink.opacity(0.5),
-                        lineWidth: 30
+                        Color.white,
+                        lineWidth: 12
                     )
                 Circle()
-                    .trim(from: 0, to: 0.25)
+                    .trim(from: 0, to: drawingStroke ? progress : .leastNonzeroMagnitude)
                     .stroke(
-                        Color.pink,
-                        // 1
+                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularMidColor"), location: 0.3), Gradient.Stop(color: Color("CircularTopColor"), location: 0.6)]), startPoint: .leading, endPoint: .trailing),
+                        
                         style: StrokeStyle(
-                            lineWidth: 30,
+                            lineWidth: 12,
                             lineCap: .round
                         )
                     )
                     .rotationEffect(.degrees(-90))
+                    
+            }
+            .animation(animation, value: drawingStroke)
+            .onAppear {
+                drawingStroke.toggle()
             }
         }
 }
 
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularProgressView()
+        let progress: Double = 0.9
+        CircularProgressView(progress: progress)
     }
 }
