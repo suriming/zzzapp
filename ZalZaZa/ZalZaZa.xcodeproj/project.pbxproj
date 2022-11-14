@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1948E5291F9D7E00F806C9 /* LakeView.swift */; };
+		3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8A929220F860030A2D9 /* keypoints.json */; };
+		3F3AC8AC292220820030A2D9 /* OsoTed8.dae in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AB292220820030A2D9 /* OsoTed8.dae */; };
+		3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */; };
+		3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */; };
 		3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */; };
 		497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634B291FED9A009EA321 /* LaunchScreenView.swift */; };
 		497A634E291FED9A009EA321 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634C291FED9A009EA321 /* ContentView.swift */; };
@@ -25,6 +29,10 @@
 
 /* Begin PBXFileReference section */
 		3F1948E5291F9D7E00F806C9 /* LakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeView.swift; sourceTree = "<group>"; };
+		3F3AC8A929220F860030A2D9 /* keypoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = keypoints.json; sourceTree = "<group>"; };
+		3F3AC8AB292220820030A2D9 /* OsoTed8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = OsoTed8.dae; sourceTree = "<group>"; };
+		3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SpaceScene.scn; sourceTree = "<group>"; };
+		3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
 		3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CalmLakeScene.scn; sourceTree = "<group>"; };
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				499FB0FC291FBCDC00147C33 /* contestants.json */,
+				3F3AC8A929220F860030A2D9 /* keypoints.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -79,11 +88,13 @@
 		499FB0F9291FBBB800147C33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F1948E5291F9D7E00F806C9 /* LakeView.swift */,
 				497A634C291FED9A009EA321 /* ContentView.swift */,
 				497A634B291FED9A009EA321 /* LaunchScreenView.swift */,
 				499FB101291FBD6700147C33 /* ContestantView.swift */,
 				49ECC4752921151A0048E9BB /* ZzTabView.swift */,
 				499213592921F950009775EF /* CircularProgressView.swift */,
+				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,7 +151,8 @@
 			children = (
 				499FB0F9291FBBB800147C33 /* Views */,
 				3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */,
-				3F1948E5291F9D7E00F806C9 /* LakeView.swift */,
+				3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */,
+				3F3AC8AB292220820030A2D9 /* OsoTed8.dae */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -211,10 +223,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */,
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
 				3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */,
+				3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */,
 				E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */,
 				499FB0FD291FBCDC00147C33 /* contestants.json in Resources */,
+				3F3AC8AC292220820030A2D9 /* OsoTed8.dae in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 			files = (
 				3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
+				3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */,
 				497A634E291FED9A009EA321 /* ContentView.swift in Sources */,
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
@@ -360,10 +376,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ZalZaZa/Preview Content\"";
-				DEVELOPMENT_TEAM = L6U78J7MGY;
+				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
+				DEVELOPMENT_TEAM = NJVZ7K5L5P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,13 +388,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZaZa";
+				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,10 +408,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ZalZaZa/Preview Content\"";
-				DEVELOPMENT_TEAM = L6U78J7MGY;
+				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
+				DEVELOPMENT_TEAM = NJVZ7K5L5P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -400,13 +420,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZaZa";
+				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
