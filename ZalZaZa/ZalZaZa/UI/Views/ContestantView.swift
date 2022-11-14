@@ -16,12 +16,16 @@ struct ContestantView: View {
             Color("MainViewColor")
                 .ignoresSafeArea()
             
-            VStack {
+            GeometryReader { g in
                 Text(contestant.name + "님의 \n지난 숙면 시간")
                     .foregroundColor(.white)
                     .font(.headline)
                     .multilineTextAlignment(.center)
+                    .position(x: g.size.width/2, y:g.size.height/8)
                 
+                CircularProgressView()
+                    .frame(width: g.size.width/2, height: g.size.height/3)
+                    .position(x: g.size.width/2, y:g.size.height/3)
                 
                 VStack {
                     HStack(alignment: .firstTextBaseline,spacing:0) {
@@ -39,6 +43,7 @@ struct ContestantView: View {
                             .foregroundColor(Color.white)
                     }
                 }
+                .position(x: g.size.width/2, y:g.size.height/3)
             }
         }
     }
