@@ -39,7 +39,7 @@ struct CircularProgressView: View {
             }
             .animation(animation, value: drawingStroke)
             .onAppear {
-                drawingStroke.toggle()
+                if drawingStroke == false { drawingStroke.toggle() }
             }
         }
 }
