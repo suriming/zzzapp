@@ -12,10 +12,8 @@ struct ContentView: View {
     @ObservedObject var contestantModel = ContestantModel()
     
     var body: some View {
-        ZStack {
-            VStack {
-                ContestantView(contestant: contestantModel.contestants[0])
-            }
+        VStack {
+            ContestantView(contestant: contestantModel.contestants[0])
         }
     }
 }
