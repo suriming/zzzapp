@@ -12,7 +12,15 @@ struct LakeView: View {
     
     static func makeScene() -> SCNScene? {
         let scene = SCNScene(named: "CalmLakeScene.scn")
+        applyTextures(to: scene)
         return scene
+    }
+    
+    static func applyTextures(to scene: SCNScene?){
+        
+        let skyboxImages = (1...6).map { UIImage(named: "skyboxLake\($0)")
+        }
+        scene?.background.contents = skyboxImages
     }
     
     var scene = makeScene()
