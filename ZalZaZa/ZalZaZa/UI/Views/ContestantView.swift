@@ -30,12 +30,12 @@ struct ContestantView: View {
                     .foregroundColor(.white)
                     .font(.headline)
                     .multilineTextAlignment(.center)
-                    .position(x: g.size.width/2, y:g.size.height/6)
+                    .position(x: g.size.width/2, y:g.size.height/8)
                 
                 // MARK: Circular Progress Bar
                 CircularProgressView(progress: progress)
                     .frame(width: g.size.width/2, height: g.size.height/3)
-                    .position(x: g.size.width/2, y:g.size.height/2.5)
+                    .position(x: g.size.width/2, y:g.size.height/3)
                 
                 // MARK: Time Expression
                 VStack {
@@ -54,7 +54,22 @@ struct ContestantView: View {
                             .foregroundColor(Color.white)
                     }
                 }
-                .position(x: g.size.width/2, y:g.size.height/2.5)
+                .position(x: g.size.width/2, y:g.size.height/3)
+                
+                // MARK: Text Rectangle
+                Text("숙면이 더 필요한 날입니다.")
+                    .padding(10)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: g.size.width/1.25, height: g.size.height/5.5)
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                    .background(
+                        Rectangle().fill(Color("MessageBoxColor"))
+                            .cornerRadius(10)
+                    )
+
+                .position(x:g.size.width/2, y:g.size.height/1.65)
+
             }
         }
     }

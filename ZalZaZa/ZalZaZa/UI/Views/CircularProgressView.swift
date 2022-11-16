@@ -27,7 +27,7 @@ struct CircularProgressView: View {
                 Circle()
                     .trim(from: 0, to: drawingStroke ? progress : .leastNonzeroMagnitude)
                     .stroke(
-                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularMidColor"), location: 0.3), Gradient.Stop(color: Color("CircularTopColor"), location: 0.6)]), startPoint: .leading, endPoint: .trailing),
+                        LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularTopColor"), location: 0.5)]), startPoint: .leading, endPoint: .trailing),
                         
                         style: StrokeStyle(
                             lineWidth: 12,
