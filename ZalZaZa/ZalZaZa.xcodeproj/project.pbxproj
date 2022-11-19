@@ -13,6 +13,7 @@
 		3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */; };
 		3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */; };
 		3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */; };
+		4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CEC9292942F100C19886 /* SleepNavigationView.swift */; };
 		497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634B291FED9A009EA321 /* LaunchScreenView.swift */; };
 		497A634E291FED9A009EA321 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634C291FED9A009EA321 /* ContentView.swift */; };
 		4992135A2921F950009775EF /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499213592921F950009775EF /* CircularProgressView.swift */; };
@@ -22,6 +23,8 @@
 		499FB102291FBD6700147C33 /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB101291FBD6700147C33 /* ContestantView.swift */; };
 		499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB103291FBDB000147C33 /* ContestantModel.swift */; };
 		49ECC4762921151A0048E9BB /* ZzTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECC4752921151A0048E9BB /* ZzTabView.swift */; };
+		49F380532928F51A007E96B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F380522928F51A007E96B4 /* LoginView.swift */; };
+		49F380562928FD58007E96B4 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F380552928FD58007E96B4 /* SignInWithApple.swift */; };
 		E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730A948291BB9490033B05C /* ZalZaZaApp.swift */; };
 		E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E730A94C291BB94A0033B05C /* Assets.xcassets */; };
 		E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E730A94F291BB94A0033B05C /* Preview Assets.xcassets */; };
@@ -34,6 +37,7 @@
 		3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SpaceScene.scn; sourceTree = "<group>"; };
 		3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
 		3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CalmLakeScene.scn; sourceTree = "<group>"; };
+		4952CEC9292942F100C19886 /* SleepNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNavigationView.swift; sourceTree = "<group>"; };
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		499213592921F950009775EF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -43,6 +47,9 @@
 		499FB101291FBD6700147C33 /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
 		499FB103291FBDB000147C33 /* ContestantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantModel.swift; sourceTree = "<group>"; };
 		49ECC4752921151A0048E9BB /* ZzTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZzTabView.swift; sourceTree = "<group>"; };
+		49F380522928F51A007E96B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49F380542928F677007E96B4 /* ZalZaZa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZalZaZa.entitlements; sourceTree = "<group>"; };
+		49F380552928FD58007E96B4 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		E730A945291BB9490033B05C /* ZalZaZa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZalZaZa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E730A948291BB9490033B05C /* ZalZaZaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZalZaZaApp.swift; sourceTree = "<group>"; };
 		E730A94C291BB94A0033B05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +102,7 @@
 				49ECC4752921151A0048E9BB /* ZzTabView.swift */,
 				499213592921F950009775EF /* CircularProgressView.swift */,
 				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
+				4952CEC9292942F100C19886 /* SleepNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +113,15 @@
 				499FB0FF291FBD4F00147C33 /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		49F380512928F3C0007E96B4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				49F380522928F51A007E96B4 /* LoginView.swift */,
+				49F380552928FD58007E96B4 /* SignInWithApple.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		E730A93C291BB9490033B05C = {
@@ -126,6 +143,8 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
+				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
+				49F380512928F3C0007E96B4 /* Authentication */,
 				499FB0FE291FBD3700147C33 /* Services */,
 				E730A959291BBA2B0033B05C /* UI */,
 				499FB0F6291FBB7100147C33 /* ViewModels */,
@@ -246,10 +265,13 @@
 				497A634E291FED9A009EA321 /* ContentView.swift in Sources */,
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
+				49F380532928F51A007E96B4 /* LoginView.swift in Sources */,
 				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
 				499FB102291FBD6700147C33 /* ContestantView.swift in Sources */,
 				49ECC4762921151A0048E9BB /* ZzTabView.swift in Sources */,
+				49F380562928FD58007E96B4 /* SignInWithApple.swift in Sources */,
 				4992135A2921F950009775EF /* CircularProgressView.swift in Sources */,
+				4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */,
 				499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,11 +398,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZalZaZa/ZalZaZa.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
-				DEVELOPMENT_TEAM = NJVZ7K5L5P;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -408,11 +431,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZalZaZa/ZalZaZa.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
-				DEVELOPMENT_TEAM = NJVZ7K5L5P;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

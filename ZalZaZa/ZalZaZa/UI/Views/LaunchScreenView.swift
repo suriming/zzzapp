@@ -14,7 +14,7 @@ struct LaunchScreenView: View {
             .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("zzZ")
+                Text("Zalza")
                     .font(.system(size:50))
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
