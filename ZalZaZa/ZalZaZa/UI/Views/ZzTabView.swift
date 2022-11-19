@@ -36,10 +36,8 @@ struct ZzTabView: View {
                 ZStack {
                     Color("MainViewColor")
                         .ignoresSafeArea()
-                    
                     Text("tab 2")
                         .foregroundColor(Color.white)
-                    
                 }
                 .tabItem {
                     VStack {
@@ -49,14 +47,7 @@ struct ZzTabView: View {
                 .tag(1)
                 
                 // MARK: Tab 3
-                ZStack {
-                    Color("MainViewColor")
-                        .ignoresSafeArea()
-                    
-                    Text("tab 3")
-                        .foregroundColor(Color.white)
-                    
-                }
+                SleepNavigationView()
                 .tabItem {
                     VStack {
                         Image(systemName: "moon")
