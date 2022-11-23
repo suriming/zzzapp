@@ -13,6 +13,7 @@ struct ZzTabView: View {
     // as the launching screen gets over
     @State var tabIndex = 1
     @State var isLoading: Bool = true
+    @EnvironmentObject var model: ContestantModel
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
@@ -57,14 +58,7 @@ struct ZzTabView: View {
                 .tag(2)
                 
                 // MARK: Tab 4
-                ZStack {
-                    Color("MainViewColor")
-                        .ignoresSafeArea()
-                    
-                    Text("tab 4")
-                        .foregroundColor(Color.white)
-                    
-                }
+                ProfileView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person")
@@ -80,6 +74,7 @@ struct ZzTabView: View {
             }
         }
         .onAppear {
+            model.getData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 withAnimation { isLoading.toggle() }
                 

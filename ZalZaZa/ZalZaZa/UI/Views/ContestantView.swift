@@ -9,15 +9,11 @@ import SwiftUI
 
 struct ContestantView: View {
     
-    var contestant:Contestant
+    @EnvironmentObject var model:ContestantModel
+    @State var contestant:Contestant = Contestant(id:"", name:"", lastSleepTimeHour: 0, lastSleepTimeMinute: 0)
+    @State var progress: Double = 0.0 // Goal sleep time hard coded to 8
     var str:String = "숙면이 더 필요한 날입니다."
     var testData:[[Int]] = [[2,30],[6,35],[4,5],[3,35],[5,15],[3,15],[6,30]]
-    let progress: Double // Goal sleep time hard coded to 8
-    
-    init(contestant: Contestant) {
-        self.contestant = contestant
-        self.progress = (Double(contestant.lastSleepTimeHour) + Double(contestant.lastSleepTimeMinute)/60.0)/8.0
-    }
     
     var body: some View {
         ZStack {
@@ -26,6 +22,13 @@ struct ContestantView: View {
             
             ContestantMainView(contestant: contestant, progress: progress, str: str)
         }
+        .onAppear {
+//            model.getData()
+            contestant = model.contestants[0]
+            progress = (Double(contestant.lastSleepTimeHour!) + Double(contestant.lastSleepTimeMinute!)/60.0)/8.0
+        }
+        // EnviromentObjest is passed down when body is called
+        // It does not exist during the initialization phase of the View struct
     }
 }
 
@@ -36,7 +39,7 @@ struct TimeExpressionView: View {
     var body: some View {
         VStack {
             HStack(alignment: .firstTextBaseline,spacing:0) {
-                Text(String(contestant.lastSleepTimeHour))
+                Text(String(contestant.lastSleepTimeHour!))
                     .font(.largeTitle)
                     .foregroundColor(Color.white)
                 Text("h")
@@ -44,7 +47,7 @@ struct TimeExpressionView: View {
             }
             
             HStack(alignment: .firstTextBaseline,spacing:0) {
-                Text(String(contestant.lastSleepTimeMinute))
+                Text(String(contestant.lastSleepTimeMinute!))
                     .foregroundColor(Color.white)
                 Text("min")
                     .foregroundColor(Color.white)
@@ -99,7 +102,8 @@ struct ContestantMainView: View {
 
 struct ContestantView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = ContestantModel()
-        ContestantView(contestant: model.contestants[0])
+//        let model = ContestantModel()
+        ContestantView()
+            .environmentObject(ContestantModel())
     }
 }

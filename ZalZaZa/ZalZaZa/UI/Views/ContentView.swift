@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var contestantModel = ContestantModel()
+//    @ObservedObject var contestantModel = ContestantModel()
+    @EnvironmentObject var model: ContestantModel
     
     var body: some View {
         VStack {
-            ContestantView(contestant: contestantModel.contestants[0])
+            ContestantView()
         }
     }
 }
@@ -21,5 +22,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ContestantModel())
     }
 }
