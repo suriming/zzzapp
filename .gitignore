@@ -49,6 +49,9 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+# Firebase Property list
+GoogleService-Info.plist
+
 ### Swift ###
 # Xcode
 #
