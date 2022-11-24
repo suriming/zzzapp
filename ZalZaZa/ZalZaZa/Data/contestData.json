@@ -1,0 +1,14 @@
+[
+    {
+        "name": "우주 맵",
+        "id": 1001,
+        "description": "와~~우주맵",
+        "imageName": "Space"
+    },
+    {
+        "name": "잔잔한 호수 맵",
+        "id": 1002,
+        "description": "와~~~호수맵",
+        "imageName": "Lake"
+    }
+]
