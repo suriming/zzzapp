@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State private var showModal = false
     @ObservedObject var model = PreviewModel()
 //    @EnvironmentObject var model: ContestantModel
     
@@ -54,22 +55,48 @@ struct ProfileView: View {
                             .font(.title)
                             .bold()
                             .padding(.bottom)
-                            .position(x: g.size
-                                .width/2, y: g.size.height/7)
+                            .position(x: g.size.width/2, y: g.size.height/7)
                         
                         VStack(alignment: .leading, spacing: 10) {
+                            
                             HStack {
-                                Text("Birthday")
-                                    .foregroundColor(Color("CharColor"))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding([.leading, .bottom])
+                                ZStack {
+                                    Text("Birthday")
+                                        .foregroundColor(Color("CharColor"))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding([.leading, .bottom])
+                                    
+                                    // birthdate format from firebase would be different
+                                    if let date = model.contestants[0].birthdate {
+                                        Text(date)
+                                            .foregroundColor(Color(.white))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .padding(.leading, 90)
+                                            .padding(.bottom)
+                                        
+                                    } else {
+                                        Text("")
+                                    }
+                                }
                             }
                             
                             HStack {
-                                Text("Email")
-                                    .foregroundColor(Color("CharColor"))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding([.leading, .bottom])
+                                ZStack {
+                                    Text("E-mail")
+                                        .foregroundColor(Color("CharColor"))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding([.leading, .bottom])
+                                    
+                                    if let e_mail = model.contestants[0].email {
+                                        Text(e_mail)
+                                            .foregroundColor(Color(.white))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .padding(.leading, 90)
+                                            .padding(.bottom)
+                                    } else {
+                                        Text("")
+                                    }
+                                }
                             }
                             
                             HStack {
@@ -103,7 +130,37 @@ struct ProfileView: View {
                                 
                             }
                             
+                            Divider()
+                                .background(Color.white)
+                                .padding(.horizontal)
+
+
+                            HStack(alignment: .center) {
+                               
+                                    Button {
+                                        print("hello")
+                                        self.showModal = true
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "pencil")
+                                                .foregroundColor(Color("CharColor"))
+                                                .font(.system(size:30))
+                                            
+                                            Text("Edit profile")
+                                                .foregroundColor(Color("CharColor"))
+                                                .font(.system(size:15))
+                                        }
+                                    }
+                                    .sheet(isPresented: self.$showModal) {
+                                        ModalView()
+                                    }
+                                
+                            }
+                            .padding(.top, 10)
+                            .frame(width: g.size.width-30)
+                            
                         }
+                        .padding(.top, 100)
                         .frame(width:g.size.width-30)
                         
                     }

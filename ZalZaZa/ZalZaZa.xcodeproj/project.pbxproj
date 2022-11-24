@@ -21,6 +21,7 @@
 		497AB4A5292DBB9400E0A3C2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A4292DBB9400E0A3C2 /* FirebaseAuth */; };
 		497AB4A7292DBB9400E0A3C2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A6292DBB9400E0A3C2 /* FirebaseFirestore */; };
 		497AB4A9292DBB9400E0A3C2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A8292DBB9400E0A3C2 /* FirebaseStorage */; };
+		49881F23292F27B500BB59F3 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49881F22292F27B500BB59F3 /* ModalView.swift */; };
 		4992135A2921F950009775EF /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499213592921F950009775EF /* CircularProgressView.swift */; };
 		499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB0FA291FBC0200147C33 /* Contestant.swift */; };
 		499FB0FD291FBCDC00147C33 /* contestants.json in Resources */ = {isa = PBXBuildFile; fileRef = 499FB0FC291FBCDC00147C33 /* contestants.json */; };
@@ -48,6 +49,7 @@
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49881F22292F27B500BB59F3 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		499213592921F950009775EF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		499FB0FA291FBC0200147C33 /* Contestant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contestant.swift; sourceTree = "<group>"; };
 		499FB0FC291FBCDC00147C33 /* contestants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contestants.json; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
 				4952CEC9292942F100C19886 /* SleepNavigationView.swift */,
 				496DEEEA292E153F0037C0E7 /* ProfileView.swift */,
+				49881F22292F27B500BB59F3 /* ModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				49E09E4F292E7AC400C13F07 /* PreviewModel.swift in Sources */,
 				3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
+				49881F23292F27B500BB59F3 /* ModalView.swift in Sources */,
 				3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */,
 				497A634E291FED9A009EA321 /* ContentView.swift in Sources */,
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
