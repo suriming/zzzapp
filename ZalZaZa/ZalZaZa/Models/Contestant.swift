@@ -17,7 +17,8 @@ struct Contestant: Identifiable, Decodable {
     var weight:Float?
     var age:Int?
     var image:String?
-    var birthdate:String?
+    var birthdate:Date?
+    var birthday:String?  // preview model
     var email:String?
     
     var lastSleepTimeHour:Int?

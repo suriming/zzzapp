@@ -12,6 +12,11 @@ struct ProfileView: View {
     @State private var showModal = false
     @ObservedObject var model = PreviewModel()
 //    @EnvironmentObject var model: ContestantModel
+    let dateFormatter = DateFormatter()
+    
+    init() {
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+    }
     
     var body: some View {
         ZStack {
@@ -66,14 +71,17 @@ struct ProfileView: View {
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding([.leading, .bottom])
                                     
-                                    // birthdate format from firebase would be different
+                                    // firebase birthdate format
+                                    // let t:Timestamp
+                                    // let birthdate:Date = t.dateValue()
                                     if let date = model.contestants[0].birthdate {
-                                        Text(date)
+                                        
+                                        Text(dateFormatter.string(from: date))
                                             .foregroundColor(Color(.white))
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .padding(.leading, 90)
                                             .padding(.bottom)
-                                        
+
                                     } else {
                                         Text("")
                                     }
