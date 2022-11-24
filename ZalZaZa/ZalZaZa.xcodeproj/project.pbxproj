@@ -12,6 +12,12 @@
 		3F3AC8AC292220820030A2D9 /* OsoTed8.dae in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AB292220820030A2D9 /* OsoTed8.dae */; };
 		3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */; };
 		3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */; };
+		3F5DA77A292E1D8C008A5E9C /* SleepContestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5DA779292E1D8C008A5E9C /* SleepContestView.swift */; };
+		3F5DA77C292E1EB4008A5E9C /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5DA77B292E1EB4008A5E9C /* Contest.swift */; };
+		3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5DA77F292E238B008A5E9C /* ContestRow.swift */; };
+		3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5DA781292E2A53008A5E9C /* ModelData.swift */; };
+		3F5DA784292E2C69008A5E9C /* contestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F5DA783292E2C69008A5E9C /* contestData.json */; };
+		3FB1DBAF292F2B2300F5C12A /* ContestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1DBAE292F2B2300F5C12A /* ContestItem.swift */; };
 		3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */; };
 		4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CEC9292942F100C19886 /* SleepNavigationView.swift */; };
 		497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634B291FED9A009EA321 /* LaunchScreenView.swift */; };
@@ -36,6 +42,12 @@
 		3F3AC8AB292220820030A2D9 /* OsoTed8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = OsoTed8.dae; sourceTree = "<group>"; };
 		3F3AC8AD2922219D0030A2D9 /* SpaceScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SpaceScene.scn; sourceTree = "<group>"; };
 		3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceView.swift; sourceTree = "<group>"; };
+		3F5DA779292E1D8C008A5E9C /* SleepContestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepContestView.swift; sourceTree = "<group>"; };
+		3F5DA77B292E1EB4008A5E9C /* Contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
+		3F5DA77F292E238B008A5E9C /* ContestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestRow.swift; sourceTree = "<group>"; };
+		3F5DA781292E2A53008A5E9C /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		3F5DA783292E2C69008A5E9C /* contestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contestData.json; sourceTree = "<group>"; };
+		3FB1DBAE292F2B2300F5C12A /* ContestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestItem.swift; sourceTree = "<group>"; };
 		3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CalmLakeScene.scn; sourceTree = "<group>"; };
 		4952CEC9292942F100C19886 /* SleepNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNavigationView.swift; sourceTree = "<group>"; };
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -78,7 +90,9 @@
 		499FB0F7291FBB7800147C33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F5DA781292E2A53008A5E9C /* ModelData.swift */,
 				499FB0FA291FBC0200147C33 /* Contestant.swift */,
+				3F5DA77B292E1EB4008A5E9C /* Contest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +102,7 @@
 			children = (
 				499FB0FC291FBCDC00147C33 /* contestants.json */,
 				3F3AC8A929220F860030A2D9 /* keypoints.json */,
+				3F5DA783292E2C69008A5E9C /* contestData.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -103,6 +118,9 @@
 				499213592921F950009775EF /* CircularProgressView.swift */,
 				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
 				4952CEC9292942F100C19886 /* SleepNavigationView.swift */,
+				3F5DA779292E1D8C008A5E9C /* SleepContestView.swift */,
+				3F5DA77F292E238B008A5E9C /* ContestRow.swift */,
+				3FB1DBAE292F2B2300F5C12A /* ContestItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +262,7 @@
 			files = (
 				3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */,
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
+				3F5DA784292E2C69008A5E9C /* contestData.json in Resources */,
 				3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */,
 				3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */,
 				E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */,
@@ -259,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5DA77A292E1D8C008A5E9C /* SleepContestView.swift in Sources */,
 				3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
 				3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */,
@@ -266,10 +286,14 @@
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
 				49F380532928F51A007E96B4 /* LoginView.swift in Sources */,
+				3F5DA77C292E1EB4008A5E9C /* Contest.swift in Sources */,
 				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
+				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
+				3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */,
 				499FB102291FBD6700147C33 /* ContestantView.swift in Sources */,
 				49ECC4762921151A0048E9BB /* ZzTabView.swift in Sources */,
 				49F380562928FD58007E96B4 /* SignInWithApple.swift in Sources */,
+				3FB1DBAF292F2B2300F5C12A /* ContestItem.swift in Sources */,
 				4992135A2921F950009775EF /* CircularProgressView.swift in Sources */,
 				4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */,
 				499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */,
