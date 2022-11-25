@@ -13,11 +13,12 @@ struct Contestant: Identifiable, Decodable {
     var id:String  // Assume id is given when data get fetched
     var pw:String?
     var name:String
-    var height:Float?
-    var weight:Float?
+    var height:Double?
+    var weight:Double?
     var age:Int?
     var image:String?
-    var birthdate:String?
+    var birthdate:Date?
+    var birthday:String?  // preview model
     var email:String?
     
     var lastSleepTimeHour:Int?

@@ -28,6 +28,7 @@
 		497AB4A7292DBB9400E0A3C2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A6292DBB9400E0A3C2 /* FirebaseFirestore */; };
 		497AB4A9292DBB9400E0A3C2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A8292DBB9400E0A3C2 /* FirebaseStorage */; };
 		49881F23292F27B500BB59F3 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49881F22292F27B500BB59F3 /* ModalView.swift */; };
+		49881F422931015100BB59F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49881F412931015100BB59F3 /* ImagePicker.swift */; };
 		4992135A2921F950009775EF /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499213592921F950009775EF /* CircularProgressView.swift */; };
 		499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499FB0FA291FBC0200147C33 /* Contestant.swift */; };
 		499FB0FD291FBCDC00147C33 /* contestants.json in Resources */ = {isa = PBXBuildFile; fileRef = 499FB0FC291FBCDC00147C33 /* contestants.json */; };
@@ -62,6 +63,7 @@
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49881F22292F27B500BB59F3 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		49881F412931015100BB59F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		499213592921F950009775EF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		499FB0FA291FBC0200147C33 /* Contestant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contestant.swift; sourceTree = "<group>"; };
 		499FB0FC291FBCDC00147C33 /* contestants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contestants.json; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49881F402931012A00BB59F3 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				49881F412931015100BB59F3 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		499FB0F6291FBB7100147C33 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
+				49881F402931012A00BB59F3 /* ImagePicker */,
 				497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */,
 				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
 				49F380512928F3C0007E96B4 /* Authentication */,
@@ -318,6 +329,7 @@
 				3F5DA77C292E1EB4008A5E9C /* Contest.swift in Sources */,
 				496DEEEB292E153F0037C0E7 /* ProfileView.swift in Sources */,
 				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
+				49881F422931015100BB59F3 /* ImagePicker.swift in Sources */,
 				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
 				3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */,
 				499FB102291FBD6700147C33 /* ContestantView.swift in Sources */,

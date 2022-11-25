@@ -10,8 +10,15 @@ import SwiftUI
 struct ProfileView: View {
     
     @State private var showModal = false
-    @ObservedObject var model = PreviewModel()
-//    @EnvironmentObject var model: ContestantModel
+    @State var isPickerShowing = false
+    @State var selectedImage:UIImage?
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model: ContestantModel
+    let dateFormatter = DateFormatter()
+    
+    init() {
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+    }
     
     var body: some View {
         ZStack {
@@ -42,15 +49,33 @@ struct ProfileView: View {
                             .rotationEffect(.degrees(-90))
                             .position(x: g.size.width/2, y: 0)
                         
-                        Image(model.contestants[0].image ?? "CatInTheBox")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: g.size.width/3, height: g.size.height/3)
-                            .clipShape(Circle())
-                            .position(x: g.size.width/2, y:0)
+                        Button {
+//                            print("hello")
+                            isPickerShowing = true
+                        } label: {
+                            if selectedImage != nil {
+                                Image(uiImage: selectedImage!)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: g.size.width/3, height: g.size.height/3)
+                                    .clipShape(Circle())
+                            } else {
+                                Image("CatInTheBox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: g.size.width/3, height: g.size.height/3)
+                                    .clipShape(Circle())
+                            }
+                            
+                        }
+                        .sheet(isPresented: $isPickerShowing) {
+                            // Image Picker
+                            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                        }
+                        .position(x: g.size.width/2, y:0)
                         
                         
-                        Text(model.contestants[0].name)
+                        Text(model.contestants[0].name )
                             .foregroundColor(.white)
                             .font(.title)
                             .bold()
@@ -60,20 +85,24 @@ struct ProfileView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             
                             HStack {
+                                // MARK: Birthday
                                 ZStack {
                                     Text("Birthday")
                                         .foregroundColor(Color("CharColor"))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding([.leading, .bottom])
                                     
-                                    // birthdate format from firebase would be different
+                                    // firebase birthdate format
+                                    // let t:Timestamp
+                                    // let birthdate:Date = t.dateValue()
                                     if let date = model.contestants[0].birthdate {
-                                        Text(date)
+                                        
+                                        Text(dateFormatter.string(from: date))
                                             .foregroundColor(Color(.white))
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .padding(.leading, 90)
                                             .padding(.bottom)
-                                        
+
                                     } else {
                                         Text("")
                                     }
@@ -81,6 +110,7 @@ struct ProfileView: View {
                             }
                             
                             HStack {
+                                // MARK: Email
                                 ZStack {
                                     Text("E-mail")
                                         .foregroundColor(Color("CharColor"))
@@ -100,6 +130,7 @@ struct ProfileView: View {
                             }
                             
                             HStack {
+                                // MARK: Height
                                 Text("Height")
                                     .foregroundColor(Color("CharColor"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -112,8 +143,11 @@ struct ProfileView: View {
                                         .padding(.bottom)
                                 } else {
                                     Text("")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom)
                                 }
                                 
+                                // MARK: Weight
                                 Text("Weight")
                                     .foregroundColor(Color("CharColor"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -126,6 +160,8 @@ struct ProfileView: View {
                                         .padding(.bottom)
                                 } else {
                                     Text("")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom)
                                 }
                                 
                             }
@@ -138,7 +174,6 @@ struct ProfileView: View {
                             HStack(alignment: .center) {
                                
                                     Button {
-                                        print("hello")
                                         self.showModal = true
                                     } label: {
                                         VStack {
@@ -178,6 +213,9 @@ struct ProfileView: View {
                     .position(x: g.size.width/2, y: g.size.height/3)
                 }
             }
+        }
+        .onAppear {
+            selectedImage = UIImage(contentsOfFile: model.contestants[0].image ?? "CatInTheBox")
         }
     }
 }
