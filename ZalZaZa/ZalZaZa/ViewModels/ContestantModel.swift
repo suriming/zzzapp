@@ -14,6 +14,16 @@ class ContestantModel: ObservableObject {
     @Published var contestants = [Contestant]()
     private let db = Firestore.firestore()
     
+    func updateData(birthdate:Date, email:String, height:Double) {
+        db.collection("contestants").document(self.contestants[0].id)
+            .setData(["birthdate":birthdate, "email":email, "height":height], merge: true) { err in
+                if let err = err {
+                    print("Error updating the document: \(err)")
+                } else {
+                    self.getData()
+                }
+            }
+    }
     
     func getData() {
     //        let db = Firestore.firestore()
@@ -25,14 +35,14 @@ class ContestantModel: ObservableObject {
                     
                     // To change UI in the main thread
                     DispatchQueue.main.async {
-
+                        var arr = [Contestant]()
                         for doc in querySnapshot!.documents {
                             var c = Contestant(id:"", name:"")
                             
                             c.id = doc.documentID
                             c.name = (doc["name"] as? String)!
-                            c.height = doc["height"] as? Float ?? nil
-                            c.weight = doc["weight"] as? Float ?? nil
+                            c.height = doc["height"] as? Double ?? nil
+                            c.weight = doc["weight"] as? Double ?? nil
                             c.age = doc["age"] as? Int ?? nil
                             c.image = doc["image"] as? String ?? nil
                             if let t = doc["birthdate"] as? Timestamp {
@@ -47,9 +57,12 @@ class ContestantModel: ObservableObject {
                             c.maxSleepTimeHour = doc["maxSleepTimeHour"] as? Int ?? nil
                             c.maxSleepTimeMinute = doc["maxSleepTimeMinute"] as? Int ?? nil
                             
-                            self.contestants.append(c)
+                            arr.append(c)
                             
                         }
+                        
+                        // destroy already created contestant array and assign a new one
+                        self.contestants = arr
                         
 //                        self.contestants = querySnapshot!.documents.map { doc in
 //                            return Contestant(id: doc.documentID, name: doc["name"] as? String ?? "", lastSleepTimeHour: doc["lastSleepTimeHour"] as? Int ?? 0, lastSleepTimeMinute: doc["lastSleepTimeMinute"] as? Int ?? 0)

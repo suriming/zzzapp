@@ -10,8 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     
     @State private var showModal = false
-    @ObservedObject var model = PreviewModel()
-//    @EnvironmentObject var model: ContestantModel
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model: ContestantModel
     let dateFormatter = DateFormatter()
     
     init() {
@@ -55,7 +55,7 @@ struct ProfileView: View {
                             .position(x: g.size.width/2, y:0)
                         
                         
-                        Text(model.contestants[0].name)
+                        Text(model.contestants[0].name )
                             .foregroundColor(.white)
                             .font(.title)
                             .bold()
@@ -146,7 +146,6 @@ struct ProfileView: View {
                             HStack(alignment: .center) {
                                
                                     Button {
-                                        print("hello")
                                         self.showModal = true
                                     } label: {
                                         VStack {
