@@ -8,15 +8,18 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import UIKit
 
 class ContestantModel: ObservableObject {
     
     @Published var contestants = [Contestant]()
     private let db = Firestore.firestore()
     
-    func updateData(birthdate:Date, email:String, height:Double) {
+    func updateData(selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
+        // Upload selectedImage(check nil)
+        
         db.collection("contestants").document(self.contestants[0].id)
-            .setData(["birthdate":birthdate, "email":email, "height":height], merge: true) { err in
+            .setData(["birthdate":birthdate, "email":email, "height":height, "weight":weight], merge: true) { err in
                 if let err = err {
                     print("Error updating the document: \(err)")
                 } else {

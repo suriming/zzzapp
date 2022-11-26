@@ -34,7 +34,7 @@ struct ProfileView: View {
                         
                         ProfileCircle(w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
                         
-                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
+//                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
                         
                         ProfileName(name: model.contestants[0].name, x: g.size.width/2, y: g.size.height/7)
                         
@@ -114,25 +114,6 @@ struct ProfileBox: View {
 }
 
 struct ProfileCircle: View {
-    @State var w:Double
-    @State var h:Double
-    @State var x:Double
-    @State var y:Double
-    
-    var body: some View {
-        Circle()
-            .stroke(
-                LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularTopColor"), location: 0.5)]), startPoint: .leading, endPoint: .trailing),
-                lineWidth: 15
-            )
-            .frame(width: w, height: h)
-            .rotationEffect(.degrees(-90))
-            .position(x: x, y: y)
-    }
-}
-
-struct ProfilePicButton: View {
-    @State var isPickerShowing = false
     @State var selectedImage:UIImage?
     @State var w:Double
     @State var h:Double
@@ -141,9 +122,15 @@ struct ProfilePicButton: View {
     @State var basePic:String = "CatInTheBox"
     
     var body: some View {
-        Button {
-            isPickerShowing = true
-        } label: {
+        ZStack {
+            Circle()
+                .stroke(
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularTopColor"), location: 0.5)]), startPoint: .leading, endPoint: .trailing),
+                    lineWidth: 15
+                )
+                .frame(width: w, height: h)
+                .rotationEffect(.degrees(-90))
+            
             if selectedImage != nil {
                 Image(uiImage: selectedImage!)
                     .resizable()
@@ -158,14 +145,10 @@ struct ProfilePicButton: View {
                     .clipShape(Circle())
             }
         }
-        .sheet(isPresented: $isPickerShowing) {
-            // Image Picker
-            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-        }
         .position(x: x, y: y)
     }
-    
 }
+
 
 struct ProfileName: View {
     @State var name:String
