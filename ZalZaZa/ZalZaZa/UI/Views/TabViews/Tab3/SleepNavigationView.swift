@@ -35,7 +35,7 @@ struct SleepNavigationView: View {
                     
                     HStack(spacing: 0) {
                         GeometryReader { g in
-                            NavigationLink(destination: Text("Sleep Contest"), label: {
+                            NavigationLink(destination: SleepContestView(), label: {
                                 ZStack {
                                     Image("SleepContest")
                                     
