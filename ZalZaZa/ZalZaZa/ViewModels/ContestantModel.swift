@@ -6,17 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 import FirebaseCore
 import FirebaseFirestore
-import UIKit
+import FirebaseStorage
 
 class ContestantModel: ObservableObject {
-    
+     
     @Published var contestants = [Contestant]()
     private let db = Firestore.firestore()
     
     func updateData(selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
         // Upload selectedImage(check nil)
+        if let im = selectedImage {
+            uploadPhoto(selectedImage: im)
+        }
         
         db.collection("contestants").document(self.contestants[0].id)
             .setData(["birthdate":birthdate, "email":email, "height":height, "weight":weight], merge: true) { err in
@@ -26,6 +30,29 @@ class ContestantModel: ObservableObject {
                     self.getData()
                 }
             }
+    }
+    
+    func uploadPhoto(selectedImage:UIImage) {
+        
+        // Create a root reference
+        let storageRef = Storage.storage().reference()
+        
+        let imageData = selectedImage.jpegData(compressionQuality: 0.8)
+        guard imageData != nil else { return }
+        
+        // Specify the file path and name
+        let fileRef = storageRef.child("images/profileImage.jpg")
+        
+        // Upload the file to the path "images/\(UUID().uuidString).jpg"
+        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, err in
+            guard metadata != nil else {
+                // Uh-oh, an error occurred!
+                print("Error uploading the data: \(String(describing: err))")
+                return
+            }
+            
+            // TODO: Save a reference to the file in Firestore DB
+        }
     }
     
     func getData() {

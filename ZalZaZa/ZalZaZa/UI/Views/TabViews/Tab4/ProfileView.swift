@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State private var showModal = false
-    @State var isPickerShowing = false
+    @State var showModal = false
     @State var selectedImage:UIImage?
-    @ObservedObject var model = PreviewModel()
-//    @EnvironmentObject var model: ContestantModel
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model: ContestantModel
     let dateFormatter = DateFormatter()
     
     init() {
@@ -32,29 +31,29 @@ struct ProfileView: View {
                     ZStack {
                         ProfileBox(w:g.size.width-30, h:g.size.height/2.25, r:10)
                         
-                        ProfileCircle(w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
+                        ProfileCircle(selectedImage: $selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
                         
 //                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y: 0)
                         
-                        ProfileName(name: model.contestants[0].name, x: g.size.width/2, y: g.size.height/7)
+                        ProfileName(x: g.size.width/2, y: g.size.height/7)
                         
                         VStack(alignment: .leading, spacing: 10) {
                             
                             // MARK: Birthday
-                            Birthday(date: model.contestants[0].birthdate, dateFormatter: dateFormatter)
+                            Birthday(dateFormatter: dateFormatter)
                             
                             // MARK: Email
-                            Email(email: model.contestants[0].email)
+                            Email()
                             
                             // MARK: Height and Weight
-                            HeightAndWeight(height: model.contestants[0].height, weight: model.contestants[0].weight)
+                            HeightAndWeight()
                             
                             Divider()
                                 .background(Color.white)
                                 .padding(.horizontal)
 
                             // MARK: Edit Profile
-                            EditProfile(showModal: showModal, w: g.size.width-30)
+                            EditProfile(showModal: $showModal, w: g.size.width-30, selectedImage: $selectedImage)
                             
                         }
                         .padding(.top, 100)
@@ -74,7 +73,7 @@ struct ProfileView: View {
             }
         }
         .onAppear {
-            selectedImage = UIImage(contentsOfFile: model.contestants[0].image ?? "CatInTheBox")
+//            selectedImage = UIImage(contentsOfFile: model.contestants[0].image ?? Image("CatInTheBox"))
         }
     }
 }
@@ -114,7 +113,7 @@ struct ProfileBox: View {
 }
 
 struct ProfileCircle: View {
-    @State var selectedImage:UIImage?
+    @Binding var selectedImage:UIImage?
     @State var w:Double
     @State var h:Double
     @State var x:Double
@@ -151,12 +150,13 @@ struct ProfileCircle: View {
 
 
 struct ProfileName: View {
-    @State var name:String
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model:ContestantModel
     @State var x:Double
     @State var y:Double
     
     var body: some View {
-        Text(name)
+        Text(model.contestants[0].name)
             .foregroundColor(.white)
             .font(.title)
             .bold()
@@ -166,8 +166,9 @@ struct ProfileName: View {
 }
 
 struct Birthday: View {
-    @State var date:Date?
-    @State var dateFormatter:DateFormatter
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model:ContestantModel
+    var dateFormatter:DateFormatter
     
     var body: some View {
         HStack {
@@ -180,7 +181,7 @@ struct Birthday: View {
                 // firebase birthdate format
                 // let t:Timestamp
                 // let birthdate:Date = t.dateValue()
-                if let d = date {
+                if let d = model.contestants[0].birthdate {
                     
                     Text(dateFormatter.string(from: d))
                         .foregroundColor(Color(.white))
@@ -197,7 +198,8 @@ struct Birthday: View {
 }
 
 struct Email: View {
-    @State var email:String?
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model:ContestantModel
     
     var body: some View {
         HStack {
@@ -207,7 +209,7 @@ struct Email: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading, .bottom])
                 
-                if let e_mail = email {
+                if let e_mail = model.contestants[0].email {
                     Text(e_mail)
                         .foregroundColor(Color(.white))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -222,8 +224,8 @@ struct Email: View {
 }
 
 struct HeightAndWeight: View {
-    @State var height:Double?
-    @State var weight:Double?
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model:ContestantModel
     
     var body: some View {
         HStack {
@@ -232,7 +234,7 @@ struct HeightAndWeight: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .bottom])
             
-            if let h = height {
+            if let h = model.contestants[0].height {
                 Text(String(h) + String("cm"))
                     .foregroundColor(Color(.white))
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -248,7 +250,7 @@ struct HeightAndWeight: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .bottom])
             
-            if let w = weight {
+            if let w = model.contestants[0].weight {
                 Text(String(w) + String("kg"))
                     .foregroundColor(Color(.white))
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -267,8 +269,9 @@ struct HeightAndWeight: View {
 // include EnvironmentObject
 struct EditProfile: View {
 //    @EnvironmentObject var model: ContestantModel
-    @State var showModal:Bool
+    @Binding var showModal:Bool
     @State var w:Double
+    @Binding var selectedImage:UIImage?
     
     var body: some View {
         HStack(alignment: .center) {
@@ -287,7 +290,7 @@ struct EditProfile: View {
                     }
                 }
                 .sheet(isPresented: $showModal) {
-//                    ModalView()
+                    ModalView(showModal: $showModal, selectedImage: $selectedImage)
                 }
             
         }

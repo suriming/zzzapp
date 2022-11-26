@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ModalView: View {
     
-    @ObservedObject var model = PreviewModel()
-//    @EnvironmentObject var model:ContestantModel
+//    @ObservedObject var model = PreviewModel()
+    @EnvironmentObject var model:ContestantModel
     @State private var date = Date()
     @State private var email = ""
     @State private var height = ""
     @State private var weight = ""
     @State var isPickerShowing = false
-    @State var selectedImage:UIImage?
+    @Binding var showModal:Bool
+    @Binding var selectedImage:UIImage?
     
     var body: some View {
         ZStack {
@@ -27,7 +28,7 @@ struct ModalView: View {
                 VStack {
                     ZStack {
 
-                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y:  g.size.height/2)
+                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: $selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y:  g.size.height/2)
                         
                     }
                     
@@ -68,7 +69,7 @@ struct ModalView: View {
                     
                     HStack {
                         SaveButton(selectedImage: selectedImage ?? nil, birthdate:date, email: email, height: Double(height) ?? 0.0, weight: Double(weight) ?? 0.0)
-                        CloseButton()
+                        CloseButton(showModal: $showModal)
                     }
 
                 }
@@ -87,9 +88,19 @@ struct ModalView: View {
 
 struct ModalView_Previews: PreviewProvider {
 //    let model = PreviewModel()
+    static var image:UIImage? = nil
+    
     static var previews: some View {
-        ModalView()
-//            .environmentObject(ContestantModel())
+        ModalViewPreviewContainer()
+    }
+}
+
+struct ModalViewPreviewContainer: View {
+    @State var image:UIImage? = nil
+    @State var showModal = false
+    
+    var body: some View {
+        ModalView(showModal: $showModal, selectedImage: $image)
     }
 }
 
@@ -101,7 +112,6 @@ struct SaveButton: View {
     var email:String
     var height:Double
     var weight:Double
-//    var weight:Double
     
     var body: some View {
         Button {
@@ -114,11 +124,13 @@ struct SaveButton: View {
 
 struct CloseButton: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var showModal:Bool
+//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         Button {
-            self.presentationMode.wrappedValue.dismiss()
+            showModal = false
+//            self.presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Close")
         }
@@ -128,7 +140,7 @@ struct CloseButton: View {
 
 struct ProfilePicButton: View {
     @State var isPickerShowing:Bool
-    @State var selectedImage:UIImage?
+    @Binding var selectedImage:UIImage?
     @State var w:Double
     @State var h:Double
     @State var x:Double
