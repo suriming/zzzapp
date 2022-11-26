@@ -14,6 +14,10 @@ struct ModalView: View {
     @State private var date = Date()
     @State private var email = ""
     @State private var height = ""
+    @State private var weight = ""
+    @State var isPickerShowing = false
+    @Binding var showModal:Bool
+    @Binding var selectedImage:UIImage?
     
     var body: some View {
         ZStack {
@@ -22,6 +26,13 @@ struct ModalView: View {
             
             GeometryReader { g in
                 VStack {
+                    ZStack {
+
+                        ProfilePicButton(isPickerShowing: isPickerShowing, selectedImage: $selectedImage, w: g.size.width/3, h: g.size.height/3, x: g.size.width/2, y:  g.size.height/2)
+                        
+                    }
+                    
+                    
                     DatePicker(
                         "Birthday: ",
                         selection: $date,
@@ -57,13 +68,12 @@ struct ModalView: View {
                     .padding(.horizontal, 50)
                     
                     HStack {
-                        SaveButton(birthdate:date, email: email, height: Double(height) ?? 0.0)
-                        CloseButton()
+                        SaveButton(selectedImage: selectedImage ?? nil, birthdate:date, email: email, height: Double(height) ?? 0.0, weight: Double(weight) ?? 0.0)
+                        CloseButton(showModal: $showModal)
                     }
-                    
 
                 }
-                .position(x: g.size.width/2, y: g.size.height/2)
+                .position(x: g.size.width/2, y: g.size.height/3)
             }
             
         }
@@ -77,24 +87,35 @@ struct ModalView: View {
 }
 
 struct ModalView_Previews: PreviewProvider {
-    @State var model = PreviewModel()
+//    let model = PreviewModel()
+    static var image:UIImage? = nil
+    
     static var previews: some View {
-        ModalView()
-            .environmentObject(ContestantModel())
+        ModalViewPreviewContainer()
+    }
+}
+
+struct ModalViewPreviewContainer: View {
+    @State var image:UIImage? = nil
+    @State var showModal = false
+    
+    var body: some View {
+        ModalView(showModal: $showModal, selectedImage: $image)
     }
 }
 
 struct SaveButton: View {
     
     @EnvironmentObject var model:ContestantModel
+    var selectedImage:UIImage?
     var birthdate:Date
     var email:String
     var height:Double
-//    var weight:Double
+    var weight:Double
     
     var body: some View {
         Button {
-            model.updateData(birthdate: birthdate, email: email, height: height)
+            model.updateData(selectedImage: selectedImage, birthdate: birthdate, email: email, height: height, weight: weight)
         } label: {
             Text("Save")
         }
@@ -103,14 +124,64 @@ struct SaveButton: View {
 
 struct CloseButton: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var showModal:Bool
+//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         Button {
-            self.presentationMode.wrappedValue.dismiss()
+            showModal = false
+//            self.presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Close")
         }
+    }
+    
+}
+
+struct ProfilePicButton: View {
+    @State var isPickerShowing:Bool
+    @Binding var selectedImage:UIImage?
+    @State var w:Double
+    @State var h:Double
+    @State var x:Double
+    @State var y:Double
+    @State var basePic:String = "CatInTheBox"
+    
+    var body: some View {
+        
+        ZStack {
+            
+            Circle()
+                .stroke(
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color("CircularBottomColor"), location: 0.1), Gradient.Stop(color: Color("CircularTopColor"), location: 0.5)]), startPoint: .leading, endPoint: .trailing),
+                    lineWidth: 15
+                )
+                .frame(width: w, height: h)
+                .rotationEffect(.degrees(-90))
+            
+            Button {
+                isPickerShowing = true
+            } label: {
+                if selectedImage != nil {
+                    Image(uiImage: selectedImage!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: w, height: h)
+                        .clipShape(Circle())
+                } else {
+                    Image(basePic)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: w, height: h)
+                        .clipShape(Circle())
+                }
+            }
+            .sheet(isPresented: $isPickerShowing) {
+                // Image Picker
+                ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+            }
+        }
+        .position(x: x, y: y)
     }
     
 }
