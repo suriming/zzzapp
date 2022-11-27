@@ -74,7 +74,10 @@ struct ZzTabView: View {
             }
         }
         .onAppear {
-            model.getData()
+            DispatchQueue.main.async {
+                model.getData()
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 withAnimation { isLoading.toggle() }
                 

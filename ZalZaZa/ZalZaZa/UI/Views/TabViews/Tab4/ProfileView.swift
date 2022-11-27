@@ -73,7 +73,19 @@ struct ProfileView: View {
             }
         }
         .onAppear {
-//            selectedImage = UIImage(contentsOfFile: model.contestants[0].image ?? Image("CatInTheBox"))
+            if let im = model.profilePhoto {
+                DispatchQueue.main.async {
+                    selectedImage = im
+                }
+            }
+//            if let im = model.contestants[0].image {
+//                DispatchQueue.main.async {
+//                    model.downloadPhoto(imageUrl: im)
+//                    selectedImage = model.profilePhoto
+//                }
+//
+//                let c = ""
+//            }
         }
     }
 }
