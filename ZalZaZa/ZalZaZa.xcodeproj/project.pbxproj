@@ -21,9 +21,9 @@
 		3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */; };
 		4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CEC9292942F100C19886 /* SleepNavigationView.swift */; };
 		496DEEEB292E153F0037C0E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DEEEA292E153F0037C0E7 /* ProfileView.swift */; };
+		4971355429375CAD008279FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971355329375CAD008279FB /* LoginViewController.swift */; };
 		497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634B291FED9A009EA321 /* LaunchScreenView.swift */; };
 		497A634E291FED9A009EA321 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634C291FED9A009EA321 /* ContentView.swift */; };
-		497AB4A2292DB3F500E0A3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */; };
 		497AB4A5292DBB9400E0A3C2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A4292DBB9400E0A3C2 /* FirebaseAuth */; };
 		497AB4A7292DBB9400E0A3C2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A6292DBB9400E0A3C2 /* FirebaseFirestore */; };
 		497AB4A9292DBB9400E0A3C2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A8292DBB9400E0A3C2 /* FirebaseStorage */; };
@@ -59,9 +59,10 @@
 		3FF23E37291F96E800E38AA3 /* CalmLakeScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CalmLakeScene.scn; sourceTree = "<group>"; };
 		4952CEC9292942F100C19886 /* SleepNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNavigationView.swift; sourceTree = "<group>"; };
 		496DEEEA292E153F0037C0E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4971355329375CAD008279FB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		497135552937685B008279FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49881F22292F27B500BB59F3 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		49881F412931015100BB59F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		499213592921F950009775EF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		49E09E4E292E7AC400C13F07 /* PreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewModel.swift; sourceTree = "<group>"; };
 		49ECC4752921151A0048E9BB /* ZzTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZzTabView.swift; sourceTree = "<group>"; };
 		49F380522928F51A007E96B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		49F380542928F677007E96B4 /* ZalZaZa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZalZaZa.entitlements; sourceTree = "<group>"; };
 		49F380552928FD58007E96B4 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		E730A945291BB9490033B05C /* ZalZaZa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZalZaZa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E730A948291BB9490033B05C /* ZalZaZaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZalZaZaApp.swift; sourceTree = "<group>"; };
@@ -139,6 +139,7 @@
 				3F1948E5291F9D7E00F806C9 /* LakeView.swift */,
 				497A634B291FED9A009EA321 /* LaunchScreenView.swift */,
 				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
+				4971355329375CAD008279FB /* LoginViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,9 +229,8 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
+				497135552937685B008279FB /* GoogleService-Info.plist */,
 				49881F402931012A00BB59F3 /* ImagePicker */,
-				497AB4A1292DB3F500E0A3C2 /* GoogleService-Info.plist */,
-				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
 				49F380512928F3C0007E96B4 /* Authentication */,
 				499FB0FE291FBD3700147C33 /* Services */,
 				E730A959291BBA2B0033B05C /* UI */,
@@ -338,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */,
-				497AB4A2292DB3F500E0A3C2 /* GoogleService-Info.plist in Resources */,
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
 				3F5DA784292E2C69008A5E9C /* contestData.json in Resources */,
 				3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */,
@@ -368,6 +367,7 @@
 				49F380532928F51A007E96B4 /* LoginView.swift in Sources */,
 				3F5DA77C292E1EB4008A5E9C /* Contest.swift in Sources */,
 				496DEEEB292E153F0037C0E7 /* ProfileView.swift in Sources */,
+				4971355429375CAD008279FB /* LoginViewController.swift in Sources */,
 				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
 				49881F422931015100BB59F3 /* ImagePicker.swift in Sources */,
 				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
@@ -504,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ZalZaZa/ZalZaZa.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,6 +512,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ZalZaZa/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -537,7 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ZalZaZa/ZalZaZa.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -545,6 +546,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ZalZaZa/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
