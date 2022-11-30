@@ -42,6 +42,10 @@
 		E730A94D291BB94A0033B05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E730A94C291BB94A0033B05C /* Assets.xcassets */; };
 		E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E730A94F291BB94A0033B05C /* Preview Assets.xcassets */; };
 		E7A4B39A293767830019A0EB /* PrivateSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B399293767830019A0EB /* PrivateSleepViewController.swift */; };
+		E7A4B3A02937683B0019A0EB /* model_coreml_float32.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39C2937683B0019A0EB /* model_coreml_float32.mlmodel */; };
+		E7A4B3A12937683B0019A0EB /* BlazePose.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39D2937683B0019A0EB /* BlazePose.swift */; };
+		E7A4B3A22937683B0019A0EB /* BlazePoseOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39E2937683B0019A0EB /* BlazePoseOutput.swift */; };
+		E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		E730A94C291BB94A0033B05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E730A94F291BB94A0033B05C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7A4B399293767830019A0EB /* PrivateSleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateSleepViewController.swift; sourceTree = "<group>"; };
+		E7A4B39C2937683B0019A0EB /* model_coreml_float32.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_coreml_float32.mlmodel; sourceTree = "<group>"; };
+		E7A4B39D2937683B0019A0EB /* BlazePose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePose.swift; sourceTree = "<group>"; };
+		E7A4B39E2937683B0019A0EB /* BlazePoseOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoseOutput.swift; sourceTree = "<group>"; };
+		E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoseRGBInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +237,7 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
+				E7A4B39B293768300019A0EB /* CoreML */,
 				49881F402931012A00BB59F3 /* ImagePicker */,
 				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
 				49F380512928F3C0007E96B4 /* Authentication */,
@@ -269,6 +278,17 @@
 				E730A948291BB9490033B05C /* ZalZaZaApp.swift */,
 			);
 			path = APP;
+			sourceTree = "<group>";
+		};
+		E7A4B39B293768300019A0EB /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				E7A4B39D2937683B0019A0EB /* BlazePose.swift */,
+				E7A4B39E2937683B0019A0EB /* BlazePoseOutput.swift */,
+				E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */,
+				E7A4B39C2937683B0019A0EB /* model_coreml_float32.mlmodel */,
+			);
+			path = CoreML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +380,9 @@
 				3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */,
 				E730A949291BB9490033B05C /* ZalZaZaApp.swift in Sources */,
 				49881F23292F27B500BB59F3 /* ModalView.swift in Sources */,
+				E7A4B3A12937683B0019A0EB /* BlazePose.swift in Sources */,
 				3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */,
+				E7A4B3A02937683B0019A0EB /* model_coreml_float32.mlmodel in Sources */,
 				497A634E291FED9A009EA321 /* ContentView.swift in Sources */,
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
@@ -371,12 +393,14 @@
 				49881F422931015100BB59F3 /* ImagePicker.swift in Sources */,
 				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
 				3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */,
+				E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */,
 				499FB102291FBD6700147C33 /* ContestantView.swift in Sources */,
 				49ECC4762921151A0048E9BB /* ZzTabView.swift in Sources */,
 				49F380562928FD58007E96B4 /* SignInWithApple.swift in Sources */,
 				3FB1DBAF292F2B2300F5C12A /* ContestItem.swift in Sources */,
 				E7A4B39A293767830019A0EB /* PrivateSleepViewController.swift in Sources */,
 				4992135A2921F950009775EF /* CircularProgressView.swift in Sources */,
+				E7A4B3A22937683B0019A0EB /* BlazePoseOutput.swift in Sources */,
 				4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */,
 				499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */,
 			);
