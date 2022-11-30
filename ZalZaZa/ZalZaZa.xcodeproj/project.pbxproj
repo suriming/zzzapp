@@ -48,6 +48,7 @@
 		E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */; };
 		E7A4B3A6293768920019A0EB /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B3A5293768920019A0EB /* CGImage+Extension.swift */; };
 		E7A4B3A829376AF30019A0EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A4B3A729376AF30019A0EB /* GoogleService-Info.plist */; };
+		E7A4B3B42937748A0019A0EB /* PrivateSleepSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B3B32937748A0019A0EB /* PrivateSleepSwiftView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoseRGBInput.swift; sourceTree = "<group>"; };
 		E7A4B3A5293768920019A0EB /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
 		E7A4B3A729376AF30019A0EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7A4B3B32937748A0019A0EB /* PrivateSleepSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSleepSwiftView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				3F5DA779292E1D8C008A5E9C /* SleepContestView.swift */,
 				3F5DA77F292E238B008A5E9C /* ContestRow.swift */,
 				3FB1DBAE292F2B2300F5C12A /* ContestItem.swift */,
+				E7A4B3B32937748A0019A0EB /* PrivateSleepSwiftView.swift */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				E7A4B3A12937683B0019A0EB /* BlazePose.swift in Sources */,
 				3F3AC8B02922250B0030A2D9 /* SpaceView.swift in Sources */,
 				E7A4B3A02937683B0019A0EB /* model_coreml_float32.mlmodel in Sources */,
+				E7A4B3B42937748A0019A0EB /* PrivateSleepSwiftView.swift in Sources */,
 				497A634E291FED9A009EA321 /* ContentView.swift in Sources */,
 				497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */,
 				499FB0FB291FBC0200147C33 /* Contestant.swift in Sources */,
@@ -550,6 +554,7 @@
 				DEVELOPMENT_TEAM = L6U78J7MGY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +588,7 @@
 				DEVELOPMENT_TEAM = L6U78J7MGY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "using camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

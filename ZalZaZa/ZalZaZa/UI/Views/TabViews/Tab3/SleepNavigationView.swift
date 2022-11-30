@@ -17,7 +17,7 @@ struct SleepNavigationView: View {
                 
                 VStack(spacing: 0) {
                     GeometryReader { g in
-                        NavigationLink(destination: PrivateSleepView(),
+                        NavigationLink(destination: PrivateSleepSwiftView(),
                             label: {
                             
                             ZStack {
