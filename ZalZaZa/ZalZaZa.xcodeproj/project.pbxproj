@@ -22,6 +22,7 @@
 		4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4952CEC9292942F100C19886 /* SleepNavigationView.swift */; };
 		496DEEEB292E153F0037C0E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DEEEA292E153F0037C0E7 /* ProfileView.swift */; };
 		4971355429375CAD008279FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971355329375CAD008279FB /* LoginViewController.swift */; };
+		4971355A293779AB008279FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49713559293779AB008279FB /* GoogleService-Info.plist */; };
 		497A634D291FED9A009EA321 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634B291FED9A009EA321 /* LaunchScreenView.swift */; };
 		497A634E291FED9A009EA321 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A634C291FED9A009EA321 /* ContentView.swift */; };
 		497AB4A5292DBB9400E0A3C2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 497AB4A4292DBB9400E0A3C2 /* FirebaseAuth */; };
@@ -66,7 +67,7 @@
 		4952CEC9292942F100C19886 /* SleepNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepNavigationView.swift; sourceTree = "<group>"; };
 		496DEEEA292E153F0037C0E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4971355329375CAD008279FB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		497135552937685B008279FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49713559293779AB008279FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		497A634B291FED9A009EA321 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		497A634C291FED9A009EA321 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49881F22292F27B500BB59F3 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
@@ -242,12 +243,10 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
-				497135552937685B008279FB /* GoogleService-Info.plist */,
-				49881F402931012A00BB59F3 /* ImagePicker */,
+				49713559293779AB008279FB /* GoogleService-Info.plist */,
 				E7A4B3A4293768830019A0EB /* Extensions */,
 				E7A4B39B293768300019A0EB /* CoreML */,
 				49881F402931012A00BB59F3 /* ImagePicker */,
-				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
 				49F380512928F3C0007E96B4 /* Authentication */,
 				499FB0FE291FBD3700147C33 /* Services */,
 				E730A959291BBA2B0033B05C /* UI */,
@@ -375,6 +374,7 @@
 			files = (
 				3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */,
 				E730A950291BB94A0033B05C /* Preview Assets.xcassets in Resources */,
+				4971355A293779AB008279FB /* GoogleService-Info.plist in Resources */,
 				3F5DA784292E2C69008A5E9C /* contestData.json in Resources */,
 				3FF23E38291F96E800E38AA3 /* CalmLakeScene.scn in Resources */,
 				3F3AC8AE2922219D0030A2D9 /* SpaceScene.scn in Resources */,
@@ -551,10 +551,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MLYDH95R3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ZalZaZa/GoogleService-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -566,7 +567,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa";
+				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa.aa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -585,10 +586,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "ZalZaZa/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MLYDH95R3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ZalZaZa/GoogleService-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -600,7 +602,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa";
+				PRODUCT_BUNDLE_IDENTIFIER = "DA2022-2.senior.zzz.ZalZa.aa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
