@@ -46,6 +46,7 @@
 		E7A4B3A12937683B0019A0EB /* BlazePose.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39D2937683B0019A0EB /* BlazePose.swift */; };
 		E7A4B3A22937683B0019A0EB /* BlazePoseOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39E2937683B0019A0EB /* BlazePoseOutput.swift */; };
 		E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */; };
+		E7A4B3A6293768920019A0EB /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4B3A5293768920019A0EB /* CGImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		E7A4B39D2937683B0019A0EB /* BlazePose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePose.swift; sourceTree = "<group>"; };
 		E7A4B39E2937683B0019A0EB /* BlazePoseOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoseOutput.swift; sourceTree = "<group>"; };
 		E7A4B39F2937683B0019A0EB /* BlazePoseRGBInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoseRGBInput.swift; sourceTree = "<group>"; };
+		E7A4B3A5293768920019A0EB /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 		E730A947291BB9490033B05C /* ZalZaZa */ = {
 			isa = PBXGroup;
 			children = (
+				E7A4B3A4293768830019A0EB /* Extensions */,
 				E7A4B39B293768300019A0EB /* CoreML */,
 				49881F402931012A00BB59F3 /* ImagePicker */,
 				49F380542928F677007E96B4 /* ZalZaZa.entitlements */,
@@ -289,6 +292,14 @@
 				E7A4B39C2937683B0019A0EB /* model_coreml_float32.mlmodel */,
 			);
 			path = CoreML;
+			sourceTree = "<group>";
+		};
+		E7A4B3A4293768830019A0EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7A4B3A5293768920019A0EB /* CGImage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				496DEEEB292E153F0037C0E7 /* ProfileView.swift in Sources */,
 				499FB100291FBD4F00147C33 /* DataService.swift in Sources */,
 				49881F422931015100BB59F3 /* ImagePicker.swift in Sources */,
+				E7A4B3A6293768920019A0EB /* CGImage+Extension.swift in Sources */,
 				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
 				3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */,
 				E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */,
