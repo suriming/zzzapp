@@ -13,7 +13,9 @@ struct ZzTabView: View {
     // as the launching screen gets over
     @State var tabIndex = 1
     @State var isLoading: Bool = true
+    @State var uid:String?
     @EnvironmentObject var model: ContestantModel
+    @EnvironmentObject var AuthModel: AuthViewModel
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
@@ -75,7 +77,8 @@ struct ZzTabView: View {
         }
         .onAppear {
             DispatchQueue.main.async {
-                model.getData()
+                self.uid = AuthModel.currentUser?.uid
+                model.getData(uid: self.uid!)
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
