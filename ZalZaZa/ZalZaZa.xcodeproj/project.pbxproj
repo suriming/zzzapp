@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F089BE6293A737400730361 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F089BE5293A737400730361 /* StatView.swift */; };
 		3F1948E6291F9D7E00F806C9 /* LakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1948E5291F9D7E00F806C9 /* LakeView.swift */; };
 		3F3AC8AA29220F860030A2D9 /* keypoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8A929220F860030A2D9 /* keypoints.json */; };
 		3F3AC8AC292220820030A2D9 /* OsoTed8.dae in Resources */ = {isa = PBXBuildFile; fileRef = 3F3AC8AB292220820030A2D9 /* OsoTed8.dae */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F089BE5293A737400730361 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatView.swift; path = ZalZaZa/UI/Views/StatView.swift; sourceTree = SOURCE_ROOT; };
 		3F1948E5291F9D7E00F806C9 /* LakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakeView.swift; sourceTree = "<group>"; };
 		3F3AC8A929220F860030A2D9 /* keypoints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = keypoints.json; sourceTree = "<group>"; };
 		3F3AC8AB292220820030A2D9 /* OsoTed8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = OsoTed8.dae; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		49DA2052293246A7007664EA /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
+				3F089BE5293A737400730361 /* StatView.swift */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				49881F422931015100BB59F3 /* ImagePicker.swift in Sources */,
 				E7A4B3A6293768920019A0EB /* CGImage+Extension.swift in Sources */,
 				49E22DC0293A3CA100CE7476 /* AuthView.swift in Sources */,
+				3F089BE6293A737400730361 /* StatView.swift in Sources */,
 				3F5DA780292E238B008A5E9C /* ContestRow.swift in Sources */,
 				3F5DA782292E2A53008A5E9C /* ModelData.swift in Sources */,
 				E7A4B3A32937683B0019A0EB /* BlazePoseRGBInput.swift in Sources */,
