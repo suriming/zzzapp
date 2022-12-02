@@ -25,10 +25,13 @@ struct ContestantView: View {
             ContestantMainView(contestant: contestant, progress: progress, str: str)
         }
         .onAppear {
-            self.uid = AuthModel.currentUser?.uid
-            model.getData(uid: self.uid!)
-            contestant = model.contestants[0]
-            progress = (Double(contestant.lastSleepTimeHour!) + Double(contestant.lastSleepTimeMinute!)/60.0)/8.0
+            if let user = AuthModel.currentUser {
+//                self.uid = AuthModel.currentUser?.uid
+                self.uid = user.uid
+                model.getData(uid: self.uid!)
+                contestant = model.contestants[0]
+                progress = (Double(contestant.lastSleepTimeHour!) + Double(contestant.lastSleepTimeMinute!)/60.0)/8.0
+            }
         }
         // EnviromentObjest is passed down when body is called
         // It does not exist during the initialization phase of the View struct
