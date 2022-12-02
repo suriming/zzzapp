@@ -16,7 +16,7 @@ struct ContestItem: View {
                 .font(.title)
             contest.image
                 .resizable()
-                .frame(width: 280, height: 255)
+                .frame(width: 280, height: 285)
                 .cornerRadius(5)
         }
         .padding(.leading, 15)

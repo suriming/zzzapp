@@ -32,6 +32,7 @@ struct SpaceView: View {
                 options: [.allowsCameraControl]
             )
         }
+        .ignoresSafeArea()
     }
 }
 
