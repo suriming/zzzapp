@@ -10,22 +10,46 @@ import SwiftUI
 
 struct SleepContestView: View {
 //    var mapName: String
-    @EnvironmentObject var modelData: ModelData
+    @State var tag:Int? = nil
+    @State var selection: Int? = nil
     
     var body: some View {
         NavigationView{
-            ZStack{
+            
+            ZStack(){
                 Color("MainViewColor")
-                    .ignoresSafeArea()
+                VStack(){
+//                    Text("Sleep Contest")
+//                        .foregroundColor(.white)
+                    
+                    ContestRow(items: Array(ModelData().contests))
+                        .padding(.vertical, 100)
+                    NavigationLink(destination: SpaceView(),
+                       label: {
+                           ZStack {
+                               Rectangle()
+                                   .frame(width: 350, height: 50)
+                                   .background(.blue)
+                                   .foregroundColor(.blue)
+                                   .cornerRadius(50)
+                               Text("Start")
+                                   .foregroundColor(.white)
+                                   .font(.system(size:20))
+                           }
+                       })
+                    
+                }
             }
-            .navigationTitle("Sleep Contest")
-            .foregroundColor(Color.white)
+            .navigationTitle("Sleep contest")
+            .accentColor(.white)
+            .foregroundColor(.white)
+            .ignoresSafeArea()
         }
     }
 }
 
 struct SleepContestView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepContestView().environmentObject(ModelData())
+        SleepContestView()
     }
 }
