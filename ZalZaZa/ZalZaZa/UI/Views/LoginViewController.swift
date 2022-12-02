@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseAuth
 
+// NOT THIS FILE
 class LoginViewController: UIViewController {
  
     @IBOutlet weak var emailTextField: UITextField!
@@ -38,13 +39,29 @@ class LoginViewController: UIViewController {
         }
     }
     
-//    func toPreview() -> some View {
-//        LoginViewController(viewController: self)
-//    }
 }
 
 //struct LoginViewController_Previews: PreviewProvider {
+//
 //    static var previews: some View {
-//        LoginViewController()
+//        NavigationLink(destination:
 //    }
 //}
+//
+//extension UIViewController {
+//    private struct Preview: UIViewControllerRepresentable {
+//        let viewController: UIViewController
+//
+//        func makeUIViewController(context: Context) -> UIViewController {
+//            return viewController
+//        }
+//
+//        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+//        }
+//    }
+//
+//    func toPreview() -> some View {
+//        Preview(viewController: self)
+//    }
+//}
+
