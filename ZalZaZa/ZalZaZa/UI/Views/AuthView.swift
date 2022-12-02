@@ -11,45 +11,94 @@ struct AuthView: View {
     
     @State var email = ""
     @State var pw = ""
+    @State var isLoading: Bool = true
     @EnvironmentObject var viewModel:AuthViewModel
     
     var body: some View {
         ZStack {
-            if viewModel.currentUser == nil {
+            LinearGradient(gradient: Gradient(colors: [Color("PrimaryColor"), Color("SubPrimaryColor")]), startPoint: .top, endPoint: .bottom)
+            .edgesIgnoringSafeArea(.all)
+            
+            VStack {
                 VStack {
-                    TextField("Email", text: $email)
-                    SecureField("PW", text: $pw)
-                    
-                    HStack {
-                        Button {
-                            viewModel.registerUser(email: email, password: pw)
-                        } label: {
-                            Text("Register")
-                        }
-                        
-                        Button {
-                            viewModel.login(email: email, password: pw)
-                        } label: {
-                            Text("Log in")
-                        }
-                        
-                        Button {
-                            viewModel.logout()
-                        } label: {
-                            Text("Log out")
-                        }
-                    }
+                    Text("Welcome")
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                    Text("Login in to your account.")
+                        .foregroundColor(.white)
+                        .font(.system(size:20))
                 }
                 
-                //            Text(viewModel.currentUser?.uid ?? "Not logged in")
-                //                .padding()
-                
-            } else {
-                ZzTabView()
-                    .environmentObject(ContestantModel())
+                if viewModel.currentUser == nil {
+                    VStack {
+                        VStack(alignment: .leading) {
+                            Text("Email")
+                                .foregroundColor(.white)
+                                .font(.system(size:20))
+                                .padding(.leading)
+                            TextField("Email", text: $email)
+                                .textFieldStyle(.roundedBorder)
+                                .padding(.horizontal)
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("Password")
+                                .foregroundColor(.white)
+                                .font(.system(size:20))
+                                .padding(.leading)
+                            SecureField("Password", text: $pw)
+                                .textFieldStyle(.roundedBorder)
+                                .padding(.horizontal)
+                        }
+                        
+                        VStack {
+                            Button {
+                                viewModel.login(email: email, password: pw)
+                            } label: {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 300, height: 50)
+                                        .background(Color.blue)
+                                        .cornerRadius(50)
+                                    Text("Log in")
+                                        .foregroundColor(.white)
+                                        .font(.system(size:20))
+                                }
+                            }
+                            .padding(.vertical)
+                            
+                            HStack {
+                                Text("Don't have one yet?")
+                                    .foregroundColor(.gray)
+                                    .font(.caption)
+                                NavigationLink(destination: SignUpView(),
+                                    label: {
+                                        Text("Sign up")
+                                            .foregroundColor(.white)
+                                            .font(.system(size:20))
+                                })
+                                
+                            }
+                            
+                        }
+                    }
+                    
+                } else {
+                    ZzTabView()
+                        .environmentObject(ContestantModel())
+                }
+            }
+            
+            if isLoading {
+                LaunchScreenView().transition(.opacity).zIndex(1)
             }
         }
-        .padding()
+        .ignoresSafeArea()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                withAnimation { if isLoading {isLoading.toggle()} }
+            })
+        }
     }
 }
 

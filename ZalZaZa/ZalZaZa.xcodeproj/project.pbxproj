@@ -41,6 +41,7 @@
 		49E22DBE293A3C6600CE7476 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E22DBD293A3C6600CE7476 /* AuthViewModel.swift */; };
 		49E22DC0293A3CA100CE7476 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E22DBF293A3CA100CE7476 /* AuthView.swift */; };
 		49E22DC2293A477F00CE7476 /* ApplicationSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E22DC1293A477F00CE7476 /* ApplicationSwitcher.swift */; };
+		49E22DC4293A82F600CE7476 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E22DC3293A82F500CE7476 /* SignUpView.swift */; };
 		49ECC4762921151A0048E9BB /* ZzTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECC4752921151A0048E9BB /* ZzTabView.swift */; };
 		49F380532928F51A007E96B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F380522928F51A007E96B4 /* LoginView.swift */; };
 		49F380562928FD58007E96B4 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F380552928FD58007E96B4 /* SignInWithApple.swift */; };
@@ -88,6 +89,7 @@
 		49E22DBD293A3C6600CE7476 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		49E22DBF293A3CA100CE7476 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		49E22DC1293A477F00CE7476 /* ApplicationSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSwitcher.swift; sourceTree = "<group>"; };
+		49E22DC3293A82F500CE7476 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		49ECC4752921151A0048E9BB /* ZzTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZzTabView.swift; sourceTree = "<group>"; };
 		49F380522928F51A007E96B4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49F380552928FD58007E96B4 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				3F3AC8AF2922250B0030A2D9 /* SpaceView.swift */,
 				4971355329375CAD008279FB /* LoginViewController.swift */,
 				49E22DC1293A477F00CE7476 /* ApplicationSwitcher.swift */,
+				49E22DC3293A82F500CE7476 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				3FB1DBAF292F2B2300F5C12A /* ContestItem.swift in Sources */,
 				E7A4B39A293767830019A0EB /* PrivateSleepViewController.swift in Sources */,
 				4992135A2921F950009775EF /* CircularProgressView.swift in Sources */,
+				49E22DC4293A82F600CE7476 /* SignUpView.swift in Sources */,
 				E7A4B3A22937683B0019A0EB /* BlazePoseOutput.swift in Sources */,
 				4952CECA292942F100C19886 /* SleepNavigationView.swift in Sources */,
 				499FB104291FBDB000147C33 /* ContestantModel.swift in Sources */,

@@ -12,11 +12,13 @@ struct ApplicationSwitcher: View {
     @EnvironmentObject var viewModel:AuthViewModel
     
     var body: some View {
-        if viewModel.currentUser != nil {
-            ZzTabView()
+        ZStack {
+            if viewModel.currentUser != nil {
+                ZzTabView()
                 
-        } else {
-            AuthView()
+            } else {
+                AuthView()
+            }
         }
     }
 }

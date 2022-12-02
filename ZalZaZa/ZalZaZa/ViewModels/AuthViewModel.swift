@@ -22,13 +22,13 @@ class AuthViewModel: ObservableObject {
         currentUser = nil
     }
     
-    func createUserUID(uid:String, email:String) {
+    func createUserUID(uid:String, name:String, birthdate:Date, email:String) {
         let db = Firestore.firestore()
         
         db.collection("contestants").document(uid)
-            .setData(["name":"", "email":email, "lastSleepTimeHour":6, "lastSleepTimeMinute":30], merge: true) { err in
+            .setData(["name":name, "birthdate":birthdate, "email":email, "lastSleepTimeHour":6, "lastSleepTimeMinute":30], merge: true) { err in
                 if let err = err {
-                    print("Error uploading the photo: \(err)")
+                    print("Error creating User UID: \(err)")
                 }
             }
     }
@@ -49,7 +49,7 @@ class AuthViewModel: ObservableObject {
         try? Auth.auth().signOut()
     }
     
-    func registerUser(email: String, password: String) {
+    func registerUser(name:String, birthday:Date, email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error : \(error.localizedDescription)")
@@ -57,7 +57,7 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.createUserUID(uid: user.uid, email:user.email!)
+            self.createUserUID(uid: user.uid, name: name, birthdate: birthday, email:user.email!)
             
             print(user.uid)
         }

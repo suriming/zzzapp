@@ -81,9 +81,10 @@ struct ZzTabView: View {
                 model.getData(uid: self.uid!)
             }
             
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 withAnimation { isLoading.toggle() }
-                
+
                 // Change the tab to tab 1
                 // And start drawing the circular bar
                 tabIndex = 0
