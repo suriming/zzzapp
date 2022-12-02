@@ -28,6 +28,7 @@ struct ZalZaZaApp: App {
            }
            .navigationViewStyle(.stack)
            .environmentObject(AuthViewModel())
+           .environmentObject(ContestantModel())
 //            ZzTabView()
 //                .environmentObject(ContestantModel())
         }

@@ -10,7 +10,9 @@ import SwiftUI
 struct ContestantView: View {
     
     @EnvironmentObject var model:ContestantModel
-    @State var contestant:Contestant = Contestant(id:"", name:"", lastSleepTimeHour: 0, lastSleepTimeMinute: 0)
+    @EnvironmentObject var AuthModel:AuthViewModel
+    @State var uid:String?
+    @State var contestant:Contestant = Contestant(id:"", name:"New Member", lastSleepTimeHour: 0, lastSleepTimeMinute: 0)
     @State var progress: Double = 0.0 // Goal sleep time hard coded to 8
     var str:String = "숙면이 더 필요한 날입니다."
     var testData:[[Int]] = [[2,30],[6,35],[4,5],[3,35],[5,15],[3,15],[6,30]]
@@ -23,7 +25,8 @@ struct ContestantView: View {
             ContestantMainView(contestant: contestant, progress: progress, str: str)
         }
         .onAppear {
-//            model.getData()
+            self.uid = AuthModel.currentUser?.uid
+            model.getData(uid: self.uid!)
             contestant = model.contestants[0]
             progress = (Double(contestant.lastSleepTimeHour!) + Double(contestant.lastSleepTimeMinute!)/60.0)/8.0
         }

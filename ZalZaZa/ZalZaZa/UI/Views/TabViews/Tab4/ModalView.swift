@@ -118,6 +118,7 @@ struct ModalViewPreviewContainer: View {
 struct SaveButton: View {
 //    @ObservedObject var model = PreviewModel()  // MARK: For preview 2
     @EnvironmentObject var model:ContestantModel
+    @EnvironmentObject var AuthModel:AuthViewModel
     var selectedImage:UIImage?
     var birthdate:Date
     var email:String
@@ -126,7 +127,7 @@ struct SaveButton: View {
     
     var body: some View {
         Button {
-            model.updateData(selectedImage: selectedImage, birthdate: birthdate, email: email, height: height, weight: weight)
+            model.updateDataWithUid(uid: AuthModel.currentUser!.uid, selectedImage: selectedImage, birthdate: birthdate, email: email, height: height, weight: weight)
         } label: {
             Text("Save")
         }

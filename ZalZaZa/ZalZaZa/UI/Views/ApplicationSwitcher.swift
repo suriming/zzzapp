@@ -14,7 +14,7 @@ struct ApplicationSwitcher: View {
     var body: some View {
         if viewModel.currentUser != nil {
             ZzTabView()
-                .environmentObject(ContestantModel())
+                
         } else {
             AuthView()
         }

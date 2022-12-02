@@ -17,6 +17,22 @@ class ContestantModel: ObservableObject {
     @Published var profilePhoto:UIImage?
     private let db = Firestore.firestore()
     
+    func updateDataWithUid(uid:String, selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
+        // Upload selectedImage(check nil)
+        if let im = selectedImage {
+            uploadPhoto(selectedImage: im)
+        }
+        
+        self.db.collection("contestants").document(self.contestants[0].id)
+            .setData(["birthdate":birthdate, "email":email, "height":height, "weight":weight], merge: true) { err in
+                if let err = err {
+                    print("Error updating the document: \(err)")
+                } else {
+                    self.getData(uid: uid)
+                }
+            }
+    }
+    
     func updateData(selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
         // Upload selectedImage(check nil)
         if let im = selectedImage {
@@ -92,6 +108,54 @@ class ContestantModel: ObservableObject {
             }
         }
 
+    }
+    
+    func getData(uid:String) {
+        self.db.collection("contestants").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                // To change UI in the main thread
+                DispatchQueue.main.async {
+                    var arr = [Contestant]()
+                    for doc in querySnapshot!.documents {
+                        if doc.documentID == uid {
+                            var c = Contestant(id:"", name:"")
+                            
+                            c.id = doc.documentID
+                            c.name = (doc["name"] as? String)!
+                            c.height = doc["height"] as? Double ?? nil
+                            c.weight = doc["weight"] as? Double ?? nil
+                            c.age = doc["age"] as? Int ?? nil
+                            if let im = doc["image"] as? String {
+                                self.downloadPhoto(imageUrl: im)
+                            } else {
+                                c.image = nil
+                            }
+                            if let t = doc["birthdate"] as? Timestamp {
+                                c.birthdate = t.dateValue()
+                            } else {
+                                c.birthdate = nil
+                            }
+                            c.email = doc["email"] as? String ?? nil
+                            
+                            c.lastSleepTimeHour = doc["lastSleepTimeHour"] as? Int ?? nil
+                            c.lastSleepTimeMinute = doc["lastSleepTimeMinute"] as? Int ?? nil
+                            c.maxSleepTimeHour = doc["maxSleepTimeHour"] as? Int ?? nil
+                            c.maxSleepTimeMinute = doc["maxSleepTimeMinute"] as? Int ?? nil
+                            
+                            arr.append(c)
+                        }
+                    }
+                    
+                    // destroy already created contestant array and assign a new one
+                    self.contestants = arr
+                    
+                }
+                
+            }
+        }
     }
     
     func getData() {
