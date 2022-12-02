@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ModalView: View {
-    
-//    @ObservedObject var model = PreviewModel()
+//    @ObservedObject var model = PreviewModel()  // MARK: For preview 1
     @EnvironmentObject var model:ContestantModel
     @State private var date = Date()
     @State private var email = ""
@@ -68,6 +67,19 @@ struct ModalView: View {
                     .padding(.horizontal, 50)
                     
                     HStack {
+                        Text("Weight: ")
+                            .font(.system(size:25))
+                            .foregroundColor(.white)
+
+                        TextField("Enter your weight", text: $weight)
+                            .textFieldStyle(.roundedBorder)
+//                            .keyboardType(.numberPad)
+//                            .disableAutocorrection(true)
+                            
+                    }
+                    .padding(.horizontal, 50)
+                    
+                    HStack {
                         SaveButton(selectedImage: selectedImage ?? nil, birthdate:date, email: email, height: Double(height) ?? 0.0, weight: Double(weight) ?? 0.0)
                         CloseButton(showModal: $showModal)
                     }
@@ -81,14 +93,13 @@ struct ModalView: View {
             date = model.contestants[0].birthdate ?? Date()
             email = model.contestants[0].email ?? ""
             height = String(model.contestants[0].height ?? 0.0)
+            weight = String(model.contestants[0].weight ?? 0.0)
         }
         
     }
 }
 
 struct ModalView_Previews: PreviewProvider {
-//    let model = PreviewModel()
-    static var image:UIImage? = nil
     
     static var previews: some View {
         ModalViewPreviewContainer()
@@ -105,7 +116,7 @@ struct ModalViewPreviewContainer: View {
 }
 
 struct SaveButton: View {
-    
+//    @ObservedObject var model = PreviewModel()  // MARK: For preview 2
     @EnvironmentObject var model:ContestantModel
     var selectedImage:UIImage?
     var birthdate:Date

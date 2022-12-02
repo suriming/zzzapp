@@ -23,8 +23,13 @@ struct ZalZaZaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZzTabView()
-                .environmentObject(ContestantModel())
+            NavigationView{
+                ApplicationSwitcher()
+           }
+           .navigationViewStyle(.stack)
+           .environmentObject(AuthViewModel())
+//            ZzTabView()
+//                .environmentObject(ContestantModel())
         }
     }
 }

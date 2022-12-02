@@ -14,6 +14,7 @@ import FirebaseStorage
 class ContestantModel: ObservableObject {
      
     @Published var contestants = [Contestant]()
+    @Published var profilePhoto:UIImage?
     private let db = Firestore.firestore()
     
     func updateData(selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
@@ -22,7 +23,7 @@ class ContestantModel: ObservableObject {
             uploadPhoto(selectedImage: im)
         }
         
-        db.collection("contestants").document(self.contestants[0].id)
+        self.db.collection("contestants").document(self.contestants[0].id)
             .setData(["birthdate":birthdate, "email":email, "height":height, "weight":weight], merge: true) { err in
                 if let err = err {
                     print("Error updating the document: \(err)")
@@ -41,10 +42,11 @@ class ContestantModel: ObservableObject {
         guard imageData != nil else { return }
         
         // Specify the file path and name
-        let fileRef = storageRef.child("images/profileImage.jpg")
+        let path = "images/\(self.contestants[0].id).jpg"
+        let fileRef = storageRef.child(path)
         
         // Upload the file to the path "images/\(UUID().uuidString).jpg"
-        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, err in
+        fileRef.putData(imageData!, metadata: nil) { metadata, err in
             guard metadata != nil else {
                 // Uh-oh, an error occurred!
                 print("Error uploading the data: \(String(describing: err))")
@@ -52,13 +54,50 @@ class ContestantModel: ObservableObject {
             }
             
             // TODO: Save a reference to the file in Firestore DB
+            self.db.collection("contestants").document(self.contestants[0].id)
+                .setData(["image":path], merge: true) { err in
+                    if let err = err {
+                        print("Error uploading the photo: \(err)")
+                    } else {
+                        DispatchQueue.main.async {
+                            self.profilePhoto = selectedImage
+                        }
+                    }
+                }
         }
+    }
+    
+    func downloadPhoto(imageUrl:String) {
+        
+        // Create a root reference
+        let storageRef = Storage.storage().reference()
+        
+        // Create a reference to the file you want to download
+        let imageRef = storageRef.child(imageUrl)
+        
+        // Download in memory with a maximum allowed size of 5MB (5 * 1024 * 1024 bytes)
+        imageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("Error downloading the photo: \(error)")
+            } else {
+                // Data is returned
+                if let image = UIImage(data: data!) {
+                    
+                    DispatchQueue.main.async {
+                        self.profilePhoto = image
+                    }
+                    
+                }
+            }
+        }
+
     }
     
     func getData() {
     //        let db = Firestore.firestore()
             
-            db.collection("contestants").getDocuments() { (querySnapshot, err) in
+            self.db.collection("contestants").getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -74,7 +113,11 @@ class ContestantModel: ObservableObject {
                             c.height = doc["height"] as? Double ?? nil
                             c.weight = doc["weight"] as? Double ?? nil
                             c.age = doc["age"] as? Int ?? nil
-                            c.image = doc["image"] as? String ?? nil
+                            if let im = doc["image"] as? String {
+                                self.downloadPhoto(imageUrl: im)
+                            } else {
+                                c.image = nil
+                            }
                             if let t = doc["birthdate"] as? Timestamp {
                                 c.birthdate = t.dateValue()
                             } else {

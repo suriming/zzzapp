@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class PreviewModel: ObservableObject {
     
@@ -14,4 +15,9 @@ class PreviewModel: ObservableObject {
     init() {
         self.contestants = DataService.getLocalData()
     }
+    
+    func updateData(selectedImage:UIImage?, birthdate:Date, email:String, height:Double, weight:Double) {
+        // do nothing, dummy function
+    }
+
 }

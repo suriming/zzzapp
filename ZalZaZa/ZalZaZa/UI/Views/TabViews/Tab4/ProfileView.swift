@@ -13,6 +13,7 @@ struct ProfileView: View {
     @State var selectedImage:UIImage?
 //    @ObservedObject var model = PreviewModel()
     @EnvironmentObject var model: ContestantModel
+    @EnvironmentObject var authModel: AuthViewModel
     let dateFormatter = DateFormatter()
     
     init() {
@@ -65,15 +66,31 @@ struct ProfileView: View {
                     ZStack {
                         ProfileBox(w: g.size.width-30, h: g.size.height/6, r: 10)
                         
-                        Text("bottom box")
-                            .foregroundColor(.white)
+                        Button {
+                            authModel.logout()
+                        } label: {
+                            Text("log out")
+                        }
+
                     }
                     .position(x: g.size.width/2, y: g.size.height/3)
                 }
             }
         }
         .onAppear {
-//            selectedImage = UIImage(contentsOfFile: model.contestants[0].image ?? Image("CatInTheBox"))
+            if let im = model.profilePhoto {
+                DispatchQueue.main.async {
+                    selectedImage = im
+                }
+            }
+//            if let im = model.contestants[0].image {
+//                DispatchQueue.main.async {
+//                    model.downloadPhoto(imageUrl: im)
+//                    selectedImage = model.profilePhoto
+//                }
+//
+//                let c = ""
+//            }
         }
     }
 }
