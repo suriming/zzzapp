@@ -8,15 +8,21 @@
 import SwiftUI
 import Charts
 
-struct ToyShape: Identifiable {
+struct PoseEval: Identifiable {
     var color: String
     var type: String
     var count: Double
     var id = UUID()
 }
 
+struct Volatility: Identifiable {
+    var type: String
+    var score: Double
+    var id = UUID()
+}
+
 struct StatView: View {
-    var stackedBarData: [ToyShape] = [
+    var stackedBarData: [PoseEval] = [
         .init(color: "Good", type: "Monday", count: 60),
         .init(color: "Bad", type: "Monday", count: 20),
         .init(color: "Bad", type: "Tuesday", count: 30),
@@ -32,6 +38,16 @@ struct StatView: View {
         .init(color: "Good", type: "Sunday", count: 40)
     ]
     
+    var plotData: [Volatility] = [
+        .init(type: "0:00", score: 0),
+        .init(type: "1:00", score: 20),
+        .init(type: "2:00", score: 40),
+        .init(type: "3:00", score: 50),
+        .init(type: "4:00", score: 23),
+        .init(type: "5:00", score: 18),
+        .init(type: "6:00", score: 22)
+        
+    ]
 //    var data: [ToyShape] = [
 //        .init(type: "Cube", count: 5),
 //        .init(type: "Sphere", count: 4),
@@ -43,24 +59,46 @@ struct StatView: View {
             Color("MainViewColor")
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0){
+                Text("Report")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.leading)
+                    .padding(.top, 30)
+                Text("Today")
+                    .font(.system(size:15))
+                    .padding(.vertical, 8)
+                    .padding(.leading)
+                Chart{
+                    ForEach(plotData) { time in
+                        LineMark(
+                            x: .value("time", time.type),
+                            y: .value("score", time.score)
+                        )
+                        .foregroundStyle(.yellow)
+                    }
+                }
                 Text("Recent")
-                    .font(.system(size:25))
+                    .font(.system(size:15))
+                    .padding(.vertical, 8)
+                    .padding(.leading)
                 Chart {
                     ForEach(stackedBarData) { shape in
                         BarMark(
-                            x: .value("Shape Type", shape.type),
-                            y: .value("Total Count", shape.count)
+                            x: .value("Evaluation", shape.type),
+                            y: .value("Counts", shape.count)
                         )
                         .foregroundStyle(by: .value("Shape Color", shape.color))
                     }
                 }
                 .foregroundColor(.white)
                 .padding(.vertical, 70)
-                .frame(height: 430)
+                .frame(height: 410)
+                .padding(.leading)
+                
             }
             .foregroundColor(.white)
             .accentColor(.white)
-            .padding(.horizontal, 15)
         }
     }
 }
