@@ -36,12 +36,7 @@ struct ZzTabView: View {
                 .tag(0)
                 
                 // MARK: Tab 2
-                ZStack {
-                    Color("MainViewColor")
-                        .ignoresSafeArea()
-                    Text("tab 2")
-                        .foregroundColor(Color.white)
-                }
+                StatView()
                 .tabItem {
                     VStack {
                         Image(systemName: "chart.bar.doc.horizontal")
